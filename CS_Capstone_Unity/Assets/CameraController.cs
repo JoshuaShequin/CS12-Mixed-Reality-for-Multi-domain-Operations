@@ -3,11 +3,14 @@
 public class CameraController : MonoBehaviour
 {
 	public float panSpeed = 100f;
+	public float zoomSPeed = 200f;
 	public float panBorderThickness = 80f;
+	public Vector2 panLimit;
 
 	void Update()
 	{
 		Vector3 pos = transform.position;
+
 
 
 		if(Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
@@ -23,6 +26,16 @@ public class CameraController : MonoBehaviour
 		{
 			pos.x -= panSpeed * Time.deltaTime;
 		}
+		else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+		{
+			pos.y += zoomSPeed * Time.deltaTime;
+		}
+		else if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+		{
+			pos.y -= zoomSPeed * Time.deltaTime;
+		}
+
+
 
 		transform.position = pos;
 	}
