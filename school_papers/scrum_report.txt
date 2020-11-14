@@ -1,0 +1,31 @@
+Sprint Goal:
+   A working Unity executable that provides the start of VR integration and basic environment objects.
+
+Product Log: 
+	•Create a GitHub repository
+	•Environment objects
+	•User class diagram
+	•Abstract NPCs class diagram
+	•Create running environment
+	•Create playing platform for the user
+	•Add simple movement capabilities for the user with a basic camera
+
+Member Task :
+   Joshua Shequin:
+	•Setup GitHub repository
+	•GitHub GitIgnore
+	•Abstract NPC’s class diagram
+
+   Johnathan Webb: 
+	•Environment(objects in environment)
+	•Create running environment
+	•Create playing platform for the user
+	•Add simple movement capabilities for the user with a basic camera (VR)
+
+   Brenden Smith:
+	•Create user class diagram
+	•Add simple movement capabilities for the user with 3 different camera views (Keyboard)
+
+Scrum Record:
+   All listed member tasks were completed. The only new roadblock in development is that the project must work with the Oculus Quest hardware instead of using a separate computer to render.
+
