@@ -1,0 +1,282 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 995438498, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 6
+  lastUpdatedAtString: 2020-11-12T17:03:45.584-08:00
+  initializedAtString: 2020-11-12T16:39:49.507-08:00
+  entries:
+  - path: CS_Capstone_Unity\Assets\CameraController.cs
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\CameraController.cs
+    projectPath: Assets\CameraController.cs
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Assets\Scenes\SampleScene.unity
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\Scenes\SampleScene.unity
+    projectPath: Assets\Scenes\SampleScene.unity
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\ArtifactDB
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ArtifactDB
+    projectPath: Library\ArtifactDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\Artifacts\2a\2aa5554d7778b63450ece4d62d7eb082
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\2a\2aa5554d7778b63450ece4d62d7eb082
+    projectPath: Library\Artifacts\2a\2aa5554d7778b63450ece4d62d7eb082
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Library\Artifacts\45\45bbab1da87e48d63b00dab390369de7
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\45\45bbab1da87e48d63b00dab390369de7
+    projectPath: Library\Artifacts\45\45bbab1da87e48d63b00dab390369de7
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Library\Artifacts\64\6474cb26953c07621282c28e05bad29c
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\64\6474cb26953c07621282c28e05bad29c
+    projectPath: Library\Artifacts\64\6474cb26953c07621282c28e05bad29c
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: CS_Capstone_Unity\Library\Artifacts\88\883e9b4fe0b8382c4b2ce5baa7e0850b
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\88\883e9b4fe0b8382c4b2ce5baa7e0850b
+    projectPath: Library\Artifacts\88\883e9b4fe0b8382c4b2ce5baa7e0850b
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: CS_Capstone_Unity\Library\Artifacts\96\96edbe32559c1665a7b97b427956f923
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\96\96edbe32559c1665a7b97b427956f923
+    projectPath: Library\Artifacts\96\96edbe32559c1665a7b97b427956f923
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: CS_Capstone_Unity\Library\Artifacts\97\970838c11700fb880020451a8429e227
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\97\970838c11700fb880020451a8429e227
+    projectPath: Library\Artifacts\97\970838c11700fb880020451a8429e227
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Library\Artifacts\a7\a711e99d74a0aca67a1226f11581ed17
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\a7\a711e99d74a0aca67a1226f11581ed17
+    projectPath: Library\Artifacts\a7\a711e99d74a0aca67a1226f11581ed17
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Library\Artifacts\c5\c5f9141e2bf7802982c0af3e6a46ed01
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\c5\c5f9141e2bf7802982c0af3e6a46ed01
+    projectPath: Library\Artifacts\c5\c5f9141e2bf7802982c0af3e6a46ed01
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: CS_Capstone_Unity\Library\Artifacts\ef\efc682bb263649eba055e06c5688ee76
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\ef\efc682bb263649eba055e06c5688ee76
+    projectPath: Library\Artifacts\ef\efc682bb263649eba055e06c5688ee76
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Library\Artifacts\f2\f23ba9e33ea14f209317f540e83651d9
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\f2\f23ba9e33ea14f209317f540e83651d9
+    projectPath: Library\Artifacts\f2\f23ba9e33ea14f209317f540e83651d9
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Library\Artifacts\fa\fa17dbcc0ea12e8a914a3718db7cc1ef
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\fa\fa17dbcc0ea12e8a914a3718db7cc1ef
+    projectPath: Library\Artifacts\fa\fa17dbcc0ea12e8a914a3718db7cc1ef
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Library\EditorInstance.json
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\EditorInstance.json
+    projectPath: Library\EditorInstance.json
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Library\gfu\cache\gitlocks.yaml
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\gfu\cache\gitlocks.yaml
+    projectPath: Library\gfu\cache\gitlocks.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\gfu\cache\gitlog.yaml
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\gfu\cache\gitlog.yaml
+    projectPath: Library\gfu\cache\gitlog.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\gfu\cache\gitstatusentries.yaml
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\gfu\cache\gitstatusentries.yaml
+    projectPath: Library\gfu\cache\gitstatusentries.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\gfu\cache\gittrackingstatus.yaml
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\gfu\cache\gittrackingstatus.yaml
+    projectPath: Library\gfu\cache\gittrackingstatus.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\gfu\cache\repoinfo.yaml
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\gfu\cache\repoinfo.yaml
+    projectPath: Library\gfu\cache\repoinfo.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\ScriptAssemblies\Assembly-CSharp.dll
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ScriptAssemblies\Assembly-CSharp.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\ShaderCache\EditorEncounteredVariants
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ShaderCache\EditorEncounteredVariants
+    projectPath: Library\ShaderCache\EditorEncounteredVariants
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe0.log
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe0.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe1.log
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe1.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe1.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe2.log
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe2.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe2.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe3.log
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe3.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\SourceAssetDB
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\SourceAssetDB
+    projectPath: Library\SourceAssetDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\StateCache\Hierarchy\6f219d-mainStage.json
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\StateCache\Hierarchy\6f219d-mainStage.json
+    projectPath: Library\StateCache\Hierarchy\6f219d-mainStage.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\StateCache\SceneView\aa94f9-mainStage.json
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\StateCache\SceneView\aa94f9-mainStage.json
+    projectPath: Library\StateCache\SceneView\aa94f9-mainStage.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Temp\__Backupscenes\0.backup
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\__Backupscenes\0.backup
+    projectPath: Temp\__Backupscenes\0.backup
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityLockfile
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityLockfile
+    projectPath: Temp\UnityLockfile
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-00c479fe3d71d2443bd37d809493f356
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-00c479fe3d71d2443bd37d809493f356
+    projectPath: Temp\UnityTempFile-00c479fe3d71d2443bd37d809493f356
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-0322fa56fee059f4885c0a27d1069bd6
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-0322fa56fee059f4885c0a27d1069bd6
+    projectPath: Temp\UnityTempFile-0322fa56fee059f4885c0a27d1069bd6
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-1e8a5e479279b714eb7ba24fc3267502
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-1e8a5e479279b714eb7ba24fc3267502
+    projectPath: Temp\UnityTempFile-1e8a5e479279b714eb7ba24fc3267502
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-25acc676e0b036549b5ef441829573a0
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-25acc676e0b036549b5ef441829573a0
+    projectPath: Temp\UnityTempFile-25acc676e0b036549b5ef441829573a0
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-2cf0beb61fd85394dac64a16a29c6553
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-2cf0beb61fd85394dac64a16a29c6553
+    projectPath: Temp\UnityTempFile-2cf0beb61fd85394dac64a16a29c6553
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-5b4c366bc95c013468b9434c45f58f26
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-5b4c366bc95c013468b9434c45f58f26
+    projectPath: Temp\UnityTempFile-5b4c366bc95c013468b9434c45f58f26
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-8bd337ce2682e914882a9499af1c8296
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-8bd337ce2682e914882a9499af1c8296
+    projectPath: Temp\UnityTempFile-8bd337ce2682e914882a9499af1c8296
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-8da289a67173664448e0adf31c86e01e
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-8da289a67173664448e0adf31c86e01e
+    projectPath: Temp\UnityTempFile-8da289a67173664448e0adf31c86e01e
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-b7ae5d2a63ae27746a356e0578aef272
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-b7ae5d2a63ae27746a356e0578aef272
+    projectPath: Temp\UnityTempFile-b7ae5d2a63ae27746a356e0578aef272
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-b975ab679e4a3084f8997345a8919bbf
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-b975ab679e4a3084f8997345a8919bbf
+    projectPath: Temp\UnityTempFile-b975ab679e4a3084f8997345a8919bbf
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-b98ae48e42745644f83c44b8e36900f0
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-b98ae48e42745644f83c44b8e36900f0
+    projectPath: Temp\UnityTempFile-b98ae48e42745644f83c44b8e36900f0
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: CS_Capstone_Unity\Temp\UnityTempFile-ec40dd2859eea144a9f693fae5e625f3
+    fullPath: E:\CS_Capstone_Unity\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Temp\UnityTempFile-ec40dd2859eea144a9f693fae5e625f3
+    projectPath: Temp\UnityTempFile-ec40dd2859eea144a9f693fae5e625f3
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
