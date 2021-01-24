@@ -31,7 +31,6 @@ public class EnemyBehavior : MonoBehaviour
         else
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
-            Debug.Log("Did not Hit");
         }
     }
 

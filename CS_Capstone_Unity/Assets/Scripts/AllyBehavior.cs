@@ -4,13 +4,15 @@ using UnityEngine.AI;
 
 public class AllyBehavior : MonoBehaviour
 {
-
+    Camera cam;
     NavMeshAgent agent;     // Baked pathing agent
 
     void Start()
     {
         // Get unit specific Nav Agent
-        agent = GetComponent<NavMeshAgent>();    
+        agent = GetComponent<NavMeshAgent>();
+
+        cam = GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -29,11 +31,11 @@ public class AllyBehavior : MonoBehaviour
     {
         RaycastHit hit;
 
-            // This cast input key will have to be matched to VR input
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
-            {
-                agent.destination = hit.point;
-            }
+        // This cast input key will have to be matched to VR input
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+        {
+            agent.destination = hit.point;
+        }
     }
 
 }
