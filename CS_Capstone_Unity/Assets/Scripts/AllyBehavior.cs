@@ -4,26 +4,33 @@ using UnityEngine.AI;
 
 public class AllyBehavior : MonoBehaviour
 {
-    Camera cam;
+
     NavMeshAgent agent;     // Baked pathing agent
+
+    // Vision params
+    public float visionRadius;
+    public float visionDistance;
+    private RaycastHit hitInfo;
 
     void Start()
     {
         // Get unit specific Nav Agent
         agent = GetComponent<NavMeshAgent>();
-
-        cam = GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Will have to get different input key for VR input
-        if (Input.GetMouseButtonDown(0)) {
-            MoveToDest();
-        }
+         // Will have to get different input key for VR input
+         if (Input.GetMouseButtonDown(0)) {
+             MoveToDest();
+         }
 
-        
+        // Vision call
+        CheckLineOfSight();
+
+
+
     }
 
     // Will be called on mouse click to set a move destination
@@ -38,4 +45,13 @@ public class AllyBehavior : MonoBehaviour
         }
     }
 
+
+    public void CheckLineOfSight()
+    {
+        LayerMask mask = LayerMask.GetMask("Enemy");
+        if (Physics.SphereCast(transform.position, visionRadius, transform.forward, out hitInfo, visionDistance, mask))
+        {
+            // Activate state, i.e. Cover/Attack     
+        }
+    }
 }
