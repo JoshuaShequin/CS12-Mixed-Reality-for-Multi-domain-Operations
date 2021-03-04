@@ -1475,7 +1475,7 @@ GameObject:
   - component: {fileID: 6948536290496528339}
   m_Layer: 8
   m_Name: Ally
-  m_TagString: Untagged
+  m_TagString: Ally_NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1562,6 +1562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05374edbdda75e4d84f667740592284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visionRadius: 0
+  visionDistance: 0
 --- !u!1 &6225830011588847846
 GameObject:
   m_ObjectHideFlags: 0
