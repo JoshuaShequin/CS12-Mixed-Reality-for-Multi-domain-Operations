@@ -1562,8 +1562,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05374edbdda75e4d84f667740592284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionRadius: 0
-  visionDistance: 0
+  bullet: {fileID: 3538153009687856975, guid: 14759279ede9a1c42aa9955d1afa079f, type: 3}
+  health: 100
+  wanderRadius: 10
+  wanderTime: 5
+  clipSize: 30
+  reloadTime: 10
+  visionRadius: 30
+  visionDistance: 30
 --- !u!1 &6225830011588847846
 GameObject:
   m_ObjectHideFlags: 0

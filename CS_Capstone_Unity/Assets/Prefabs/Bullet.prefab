@@ -91,11 +91,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3538153009687856975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75a681d865416040a55aed17141fa0e, type: 3}
+  m_Script: {fileID: 11500000, guid: c94792fcba985cd4992397afa0802861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
-  flyTime: 10
+  speed: 400
+  flyTime: 30
   projectileDamage: 10
 --- !u!54 &5906010543477046902
 Rigidbody:
