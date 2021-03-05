@@ -62,6 +62,20 @@ public class GameStateManager : MonoBehaviour
 
     public void restart()
     {
+        GameObject[] alive_normal_enemies = GameObject.FindGameObjectsWithTag("Enemy_NPC");
+        GameObject[] alive_normal_allys = GameObject.FindGameObjectsWithTag("Ally_NPC");
+
+        for(int i = 0; i < alive_normal_enemies.Length; i++)
+        {
+            Destroy(alive_normal_enemies[i]);
+        }
+
+        for (int i = 0; i < alive_normal_allys.Length; i++)
+        {
+            Destroy(alive_normal_allys[i]);
+        }
+
+
         for (int i = 0; i < recorded_normal_ally_count; i++)
         {
             Instantiate(normalAllyUnit, new Vector3(58.1f + i, 249.6f, 417.8f), Quaternion.identity);
