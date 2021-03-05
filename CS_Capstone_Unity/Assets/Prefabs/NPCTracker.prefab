@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7788887266054036480}
   - component: {fileID: 7788887266054036487}
   m_Layer: 0
-  m_Name: NPCTracker 1
+  m_Name: NPCTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7788887266054036481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f216d5e2de5b657409b02efdd0bcf3e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 87374d24833eed9499033329d6c7f16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Drawing_base: {fileID: 0}
+  Drawing_base: {fileID: 4475931974923353335, guid: 66f01127a14f9c14b91078d6e7128216,
+    type: 3}
+  ally_normal_NPC_count: 2
+  enemy_normal_NPC_count: 2
+  normalAllyUnit: {fileID: 6142470160357008732, guid: d9af4960bee60344a9e6853aaef50859,
+    type: 3}
+  normalEnemyUnit: {fileID: 4287972913697431351, guid: e8a4923819ea1d74892ba82e9df60184,
+    type: 3}
