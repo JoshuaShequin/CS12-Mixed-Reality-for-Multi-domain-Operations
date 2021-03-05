@@ -52,6 +52,12 @@ public class AllyBehavior : MonoBehaviour
 
     void Update()
     {
+        // Will have to get different input key for VR input
+        if (Input.GetMouseButtonDown(1))
+        {
+            MoveToDest();
+        }
+
         BehaviorStateMachine();
     }
 
