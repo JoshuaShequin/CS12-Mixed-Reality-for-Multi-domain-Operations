@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Terrain_Tag
+  - Ally_NPC
+  - Enemy_NPC
+  - HiddenMenuElement
   layers:
   - Default
   - TransparentFX
