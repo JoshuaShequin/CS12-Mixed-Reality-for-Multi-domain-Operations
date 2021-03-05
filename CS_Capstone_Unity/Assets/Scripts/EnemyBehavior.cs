@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class EnemyBehavior : MonoBehaviour
 {
 
-
+    public int health = 100;
 
     NavMeshAgent agent;     // Baked pathing agent
 
@@ -53,4 +53,17 @@ public class EnemyBehavior : MonoBehaviour
             // Activate state, i.e. Cover/Attack     
         }
     }
+
+    public void LoseHealth(int damage)
+    {
+        Debug.Log("Enemy has lost health");
+        Debug.Log("Health is: " + health);
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+  
 }
