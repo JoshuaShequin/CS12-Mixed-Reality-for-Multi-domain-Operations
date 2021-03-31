@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     public float speed = 400f;
-    public float flyTime = 30;  // How long until we kill the projectile
+    public float flyTime = 15;  // How long until we kill the projectile
     public int projectileDamage = 10;
     private Rigidbody rb;
 
@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Bullet collision with unit");
-        // Layer 8 and 9 should hold the ally/enemy units
+        // Layer 8 and 9 should hold the ally/enemy units.
         if (collision.gameObject.layer == 8)
         {
             collision.gameObject.GetComponent<AllyBehavior>().LoseHealth(projectileDamage);
@@ -41,8 +41,10 @@ public class Bullet : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyBehavior>().LoseHealth(projectileDamage);
         }
-        Destroy(gameObject);
-            
+        else if (collision.gameObject.tag != "Projectile")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
