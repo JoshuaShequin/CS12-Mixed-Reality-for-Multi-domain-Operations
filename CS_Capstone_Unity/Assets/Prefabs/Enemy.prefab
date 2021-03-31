@@ -1326,7 +1326,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8276b4b411791914f896a1411f604456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 3538153009687856975, guid: 14759279ede9a1c42aa9955d1afa079f, type: 3}
   health: 100
+  wanderRadius: 10
+  wanderTime: 0.5
+  clipSize: 30
+  reloadTime: 10
+  rateOfFire: 0.5
   visionRadius: 30
   visionDistance: 30
 --- !u!1 &4427579484246552726

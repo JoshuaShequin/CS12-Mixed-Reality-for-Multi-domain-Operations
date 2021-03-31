@@ -1565,9 +1565,10 @@ MonoBehaviour:
   bullet: {fileID: 3538153009687856975, guid: 14759279ede9a1c42aa9955d1afa079f, type: 3}
   health: 100
   wanderRadius: 10
-  wanderTime: 5
+  wanderTime: 0.5
   clipSize: 30
   reloadTime: 10
+  rateOfFire: 0.5
   visionRadius: 30
   visionDistance: 30
 --- !u!1 &6225830011588847846
