@@ -1,39 +1,72 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+
 
 public class EnemyBehavior : MonoBehaviour
 {
 
-    public int health = 100;
-
     NavMeshAgent agent;     // Baked pathing agent
 
-    // Vision params
-    public float visionRadius;
-    public float visionDistance;
+    // Unit Params
+    public GameObject bullet;
+    public int health = 100;
+    STATE state;            // General behavior state
+    FIRE_ORDERS fireOrders;
+
+    // Movement Params
+    public int wanderRadius = 10;
+    public float wanderTime = 0.8f;
+
+    // Attack Params
+    private GameObject currTarget;     // Will hold a reference to where the target is
+    public int clipSize = 30;          // How many shots before reload
+    public int reloadTime = 10;        // How long to reload
+    public float rateOfFire = 0.5f;    // Time between shots. Values < 1 are better
+    private bool canShoot = true;      // Can shots be fired
+
+    // Vision Params
+    public float visionRadius = 20;
+    public float visionDistance = 50;
     private RaycastHit hitInfo;
 
-    // Start is called to grab the NavMesh Agent
-    void Start()
+    // Behavior States
+    private enum STATE
     {
-        agent = GetComponent<NavMeshAgent>();
+        SCANNING, MOVING, ATTACKING, DEAD
     }
 
-    // Update is called once per frame
+    // Determines if units will ask for permission to engage
+    public enum FIRE_ORDERS
+    {
+        HOLD_FIRE, FREE_FIRE
+    }
+
+
+    // Initialize and start
+    void Start()
+    {
+        // Get unit specific Nav Agent
+        agent = GetComponent<NavMeshAgent>();
+
+        // Set starting states
+        state = STATE.SCANNING;
+        fireOrders = FIRE_ORDERS.FREE_FIRE;
+    }
+
     void Update()
     {
         // Will have to get different input key for VR input
         if (Input.GetMouseButtonDown(0))
         {
             MoveToDest();
-        } 
+        }
 
-        // Vision call
-        CheckLineOfSight();
-
+        BehaviorStateMachine();
     }
 
-    // Will be called on mouse click to set a move destination
+
+    // Can be used to raycast a destination to units
     void MoveToDest()
     {
         RaycastHit hit;
@@ -45,25 +78,151 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    public void CheckLineOfSight()
+
+    // Will check for hostile vision collision and return a bool only for forward line of site
+    public bool CheckLineOfSight()
     {
         LayerMask mask = LayerMask.GetMask("Ally");
-        if (Physics.SphereCast(transform.position, visionRadius, transform.forward, out hitInfo, visionDistance, mask))
-        {   
-            // Activate state, i.e. Cover/Attack     
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, visionRadius, mask);
+        if (hitColliders.Length >= 1)
+        {
+            Debug.Log("Ally spotted");
+            // Set the current target
+            currTarget = hitColliders[0].gameObject;
+
+            // Activate attack state
+            if (fireOrders == FIRE_ORDERS.FREE_FIRE)
+            {
+                state = STATE.ATTACKING;
+                return true;
+            }
+            return true;
+        }
+        else
+        {
+            return false;   // No vision detection
         }
     }
 
+    // Remove health from unit
     public void LoseHealth(int damage)
     {
-        Debug.Log("Enemy has lost health");
-        Debug.Log("Health is: " + health);
         health -= damage;
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            // Turn off
+            state = STATE.DEAD;
+        }
+        else if (state != STATE.ATTACKING)  // We are taking damage, attack back
+            state = STATE.ATTACKING;
+    }
+
+    public void FaceTarget()
+    {
+        this.transform.LookAt(currTarget.transform);
+    }
+
+
+    // Coroutine that works to delay fire rate.
+    IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(rateOfFire);
+        canShoot = true;
+
+    }
+
+    // Check for hostiles and fire
+    public void Attack()
+    {
+        if (CheckLineOfSight())
+        {
+            if (canShoot)
+            {
+                // FaceTarget is called to ensure correct target position
+                FaceTarget();
+
+                Debug.Log("Attacking");
+                GameObject instantiatedBullet = (GameObject)Instantiate(bullet, transform.position + (Vector3.up * 2) + (transform.forward * 2)
+                                                , transform.rotation);
+                canShoot = false;
+                StartCoroutine(ShootDelay());   // Enforce units rate of fire 
+            }
+        }
+        else
+        {
+            // Search for possibly more hostiles
+            state = STATE.SCANNING;
         }
     }
 
-  
+    public void Scanning()
+    {
+        // Eventually will rotate unit to move vision cone and check a wider area for hostiles
+        if (CheckLineOfSight())
+        {
+            state = STATE.ATTACKING;
+        }
+        else
+        {
+
+            // Check near FoV
+            if (CheckLineOfSight())
+            {
+                state = STATE.ATTACKING;
+            }
+            else
+            {
+                state = STATE.MOVING;
+            }
+        }
+    }
+
+    // Gets a random Vector3 relative to origin and wanderRadius.
+    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * dist;
+
+        randomDirection += origin;
+        NavMeshHit hitInfo;
+        NavMesh.SamplePosition(randomDirection, out hitInfo, dist, layermask);
+
+        return hitInfo.position;
+    }
+
+    // Unit will wander in a direction no farther then the wanderRadius
+    public void Moving()
+    {
+        Vector3 newPosition = RandomNavSphere(transform.position, wanderRadius, -1);
+        agent.SetDestination(newPosition);
+        state = STATE.SCANNING;
+    }
+
+
+    // Destroy gameobject when health is depleted
+    private void DeleteUnit()
+    {
+        Destroy(this.gameObject);
+
+    }
+
+
+    private void BehaviorStateMachine()
+    {
+
+        switch (state)
+        {
+            case STATE.ATTACKING:
+                Attack();
+                break;
+            case STATE.SCANNING:
+                Scanning();
+                break;
+            case STATE.MOVING:
+                Invoke("Moving", wanderTime);
+                break;
+            case STATE.DEAD:
+                DeleteUnit();
+                break;
+        }
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 
 public class AllyBehavior : MonoBehaviour
@@ -10,17 +11,19 @@ public class AllyBehavior : MonoBehaviour
     // Unit Params
     public GameObject bullet;
     public int health = 100;
-    STATE state;
+    STATE state;            // General behavior state
     FIRE_ORDERS fireOrders;
 
     // Movement Params
     public int wanderRadius = 10;
-    public float wanderTime = 5.0f;
+    public float wanderTime = 0.8f;
 
     // Attack Params
     private GameObject currTarget;  // Will hold a reference to where the target is
     public int clipSize = 30;       // How many shots before reload
     public int reloadTime = 10;     // How long to reload
+    public float rateOfFire = 0.5f;    // Time between shots. Values < 1 are better
+    private bool canShoot = true;      // Can shots be fired
 
     // Vision Params
     public float visionRadius = 20;
@@ -74,13 +77,6 @@ public class AllyBehavior : MonoBehaviour
         }
     }
 
-    public bool CheckSurroundings()
-    {
-        // Will work the same as CheckLineOfSight(), but will use a spherecast around the unit at a smaller radius.
-        // Hopefully will prevent enemy units from sneaking right up on units by skurting the FoV.
-        // Current target may be updated here
-        return false;
-    }
 
     // Will check for hostile vision collision and return a bool only for forward line of site
     public bool CheckLineOfSight()
@@ -123,9 +119,7 @@ public class AllyBehavior : MonoBehaviour
             // Turn off
             state = STATE.DEAD;
         }
-
-        // We are taking damage, attack back
-        if (state != STATE.ATTACKING)
+        else if (state != STATE.ATTACKING)  // We are taking damage, attack back
             state = STATE.ATTACKING;
     }
 
@@ -134,17 +128,31 @@ public class AllyBehavior : MonoBehaviour
         this.transform.LookAt(currTarget.transform);
     }
 
+
+    // Coroutine that works to delay fire rate.
+    IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(rateOfFire);
+        canShoot = true;
+
+    }
+
     // Check for hostiles and fire
     public void Attack()
     {
-
         if (CheckLineOfSight())
         {
-            // FaceTarget is called after CheckLineOfSight to ensure a target
-            FaceTarget();
-            Debug.Log("Attacking");
-            GameObject instantiatedBullet1 = (GameObject)Instantiate(bullet, transform.position + (Vector3.up * 2) + (Vector3.forward * 2)
-                                            ,transform.rotation);
+            if (canShoot)
+            {
+                // FaceTarget is called to ensure correct target position
+                FaceTarget();
+
+                Debug.Log("Attacking");
+                GameObject instantiatedBullet = (GameObject)Instantiate(bullet, transform.position + (Vector3.up * 2) + (transform.forward * 2)
+                                                , transform.rotation);
+                canShoot = false;
+                StartCoroutine(ShootDelay());   // Enforce units rate of fire 
+            }
         }
         else
         {
@@ -163,7 +171,7 @@ public class AllyBehavior : MonoBehaviour
         {
 
             // Check near FoV
-            if(CheckSurroundings())
+            if(CheckLineOfSight())
             {
                 state = STATE.ATTACKING;
             }else
@@ -173,7 +181,7 @@ public class AllyBehavior : MonoBehaviour
         }
     }
 
-    // Gets a random Vector3 relative to origin and wanderRadius
+    // Gets a random Vector3 relative to origin and wanderRadius.
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randomDirection = Random.insideUnitSphere * dist;
@@ -214,7 +222,7 @@ public class AllyBehavior : MonoBehaviour
                     Scanning();
                     break;
                 case STATE.MOVING:
-                    Moving();
+                    Invoke("Moving", wanderTime);
                     break;
                 case STATE.DEAD:
                     DeleteUnit();
