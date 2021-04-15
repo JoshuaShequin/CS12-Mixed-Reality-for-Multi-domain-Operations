@@ -39,13 +39,13 @@ public class FogOfWarScript : MonoBehaviour
                 {
                     
                     Vector3 v = m_fogOfWarPlane.transform.TransformPoint(m_vertices[i]);
-                    Debug.Log("v");
-                    Debug.Log(v);
-                    Debug.Log("hit point");
-                    Debug.Log(hit.point);
+                    //Debug.Log("v");
+                    //Debug.Log(v);
+                    //Debug.Log("hit point");
+                    //Debug.Log(hit.point);
                     float dist = Vector3.SqrMagnitude(v - hit.point);
-                    Debug.Log("DIST");
-                    Debug.Log(dist);
+                    //Debug.Log("DIST");
+                    //Debug.Log(dist);
                     if (dist < m_radiusSqr)
                     {
                         
