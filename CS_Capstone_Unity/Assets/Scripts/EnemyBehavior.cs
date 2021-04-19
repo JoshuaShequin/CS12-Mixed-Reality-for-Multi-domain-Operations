@@ -15,8 +15,9 @@ public class EnemyBehavior : MonoBehaviour
     FIRE_ORDERS fireOrders;
 
     // Movement Params
-    public int wanderRadius = 10;
-    public float wanderTime = 0.8f;
+    public int wanderRadius = 50;
+    public int wanderTime = 100;
+    private int wanderTix = 0;
 
     // Attack Params
     private GameObject currTarget;     // Will hold a reference to where the target is
@@ -86,7 +87,7 @@ public class EnemyBehavior : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, visionRadius, mask);
         if (hitColliders.Length >= 1)
         {
-            Debug.Log("Ally spotted");
+            //Debug.Log("Ally unit spotted");
             // Set the current target
             currTarget = hitColliders[0].gameObject;
 
@@ -192,9 +193,14 @@ public class EnemyBehavior : MonoBehaviour
     // Unit will wander in a direction no farther then the wanderRadius
     public void Moving()
     {
-        Vector3 newPosition = RandomNavSphere(transform.position, wanderRadius, -1);
-        agent.SetDestination(newPosition);
-        state = STATE.SCANNING;
+        if (--wanderTix > 0) { return; }
+        else
+        {
+            Vector3 newPosition = RandomNavSphere(transform.position, wanderRadius, -1);
+            agent.SetDestination(newPosition);
+            state = STATE.SCANNING;
+            wanderTix = wanderTime;
+        }
     }
 
 
@@ -218,7 +224,7 @@ public class EnemyBehavior : MonoBehaviour
                 Scanning();
                 break;
             case STATE.MOVING:
-                Invoke("Moving", wanderTime);
+                Moving();
                 break;
             case STATE.DEAD:
                 DeleteUnit();
