@@ -11,7 +11,7 @@ public class EnemyBehavior : MonoBehaviour
     // Unit Params
     public GameObject bullet;
     public int health = 100;
-    STATE state;            // General behavior state
+    public STATE state;            // General behavior state
     FIRE_ORDERS fireOrders;
 
     // Movement Params
