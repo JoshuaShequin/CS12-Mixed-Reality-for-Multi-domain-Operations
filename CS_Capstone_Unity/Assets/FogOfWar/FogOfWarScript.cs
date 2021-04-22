@@ -16,6 +16,8 @@ public class FogOfWarScript : MonoBehaviour
     private Vector3[] m_vertices;
     private Color[] m_colors;
 
+    private bool active = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,5 +78,11 @@ public class FogOfWarScript : MonoBehaviour
     void UpdateColor()
     {
         m_mesh.colors = m_colors;
+    }
+
+    public void toggleFogOfWar()
+    {
+        active = !active;
+        m_fogOfWarPlane.SetActive(active);
     }
 }
