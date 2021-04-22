@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using System.Collections.Generic;
+
 
 
 public class AllyBehavior : MonoBehaviour
@@ -15,8 +17,11 @@ public class AllyBehavior : MonoBehaviour
     FIRE_ORDERS fireOrders;
 
     // Movement Params
-    public int wanderRadius = 10;
-    public float wanderTime = 0.8f;
+    public int wanderRadius = 50;
+    public int wanderTime = 100;
+    private int wanderTix = 0;                                  // Gives delay to movement commands to prevent stutter steps
+    private List<Vector3> patrolPoints = new List<Vector3>();   // Holds patrol point positions
+    private int destPoint = 0;                                  // Index for current patrol point target
 
     // Attack Params
     private GameObject currTarget;  // Will hold a reference to where the target is
@@ -31,9 +36,9 @@ public class AllyBehavior : MonoBehaviour
     private RaycastHit hitInfo;
 
     // Behavior States
-    private enum STATE
+    public enum STATE
     {
-        SCANNING, MOVING, ATTACKING, DEAD
+        SCANNING, MOVING, ATTACKING, PATROLLING, DEAD
     }
 
     // Determines if units will ask for permission to engage
@@ -61,7 +66,60 @@ public class AllyBehavior : MonoBehaviour
             MoveToDest();
         }
 
+        // Currently uses shift-Click to set a patrol point
+        if (  ( Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) ) && Input.GetMouseButtonDown(0) ) {
+            AddPatrolPoint();
+        }
+
+        // Clear all set patrol points on ctrl-lmb
+        if (( (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) ) && Input.GetMouseButtonDown(0)) ) {
+            RemovePatrolPoints();
+        }
+
         BehaviorStateMachine();
+    }
+
+    // Add a patrol point for the unit
+    void AddPatrolPoint()
+    {
+        Debug.Log("==Patrol point added");
+        RaycastHit hit;
+
+        // This cast input key will have to be matched to VR input
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity) && hit.transform != null)
+        {
+            Debug.Log(hit.point);
+            patrolPoints.Add(hit.point);
+        }
+
+        // If this is the first patrol point, start moving towards it
+        if (patrolPoints.Count == 1)
+        {
+            agent.SetDestination(patrolPoints[0]);
+        }
+        state = STATE.PATROLLING;
+
+    }
+
+
+    // Remove all assigned patrol points
+    void RemovePatrolPoints()
+    {
+        Debug.Log("==Patrol points cleared");
+        patrolPoints.Clear();
+        state = STATE.SCANNING;
+    }
+
+
+    // Will move between patrol points
+    void Patrol()
+    {
+        // Do we need to update the patrol point yet?
+        if ((!agent.pathPending && agent.remainingDistance <= 0.5f) && patrolPoints.Count > 0)
+        {
+            agent.SetDestination(patrolPoints[destPoint]);
+            destPoint = (destPoint + 1) % patrolPoints.Count;
+        }
     }
 
 
@@ -78,7 +136,7 @@ public class AllyBehavior : MonoBehaviour
     }
 
 
-    // Will check for hostile vision collision and return a bool only for forward line of site
+    // Will check for hostile vision collision and return a bool
     public bool CheckLineOfSight()
     {
         LayerMask mask = LayerMask.GetMask("Enemy");
@@ -110,6 +168,7 @@ public class AllyBehavior : MonoBehaviour
         }
     }
 
+
     // Remove health from unit
     public void LoseHealth(int damage)
     {
@@ -123,6 +182,8 @@ public class AllyBehavior : MonoBehaviour
             state = STATE.ATTACKING;
     }
 
+
+    // Face model towards targets current position
     public void FaceTarget()
     {
         this.transform.LookAt(currTarget.transform);
@@ -161,23 +222,24 @@ public class AllyBehavior : MonoBehaviour
         }
     }
 
+
     public void Scanning()
     {
-        // Eventually will rotate unit to move vision cone and check a wider area for hostiles
+        // Check for hostiles. Move if none are found
         if (CheckLineOfSight())
         {
             state = STATE.ATTACKING;
-        }else
+        }
+        // Back to patrol
+        else if (patrolPoints.Count > 0)
         {
-
-            // Check near FoV
-            if(CheckLineOfSight())
-            {
-                state = STATE.ATTACKING;
-            }else
-            {
-                state = STATE.MOVING;
-            }
+            state = STATE.PATROLLING;
+        }
+        // Start wandering
+        else
+        {
+            state = STATE.MOVING;
+           
         }
     }
 
@@ -196,9 +258,14 @@ public class AllyBehavior : MonoBehaviour
     // Unit will wander in a direction no farther then the wanderRadius
     public void Moving()
     {
-        Vector3 newPosition = RandomNavSphere(transform.position, wanderRadius, -1);
-        agent.SetDestination(newPosition);
-        state = STATE.SCANNING;
+        if (--wanderTix > 0) { state = STATE.SCANNING; }
+        else
+        {
+            Vector3 newPosition = RandomNavSphere(transform.position, wanderRadius, -1);
+            agent.SetDestination(newPosition);
+            state = STATE.SCANNING;
+            wanderTix = wanderTime;
+        }
     }
 
 
@@ -206,25 +273,27 @@ public class AllyBehavior : MonoBehaviour
     private void DeleteUnit()
     {
         Destroy(this.gameObject);
-
     }
 
 
     private void BehaviorStateMachine()
     {
-        
-            switch (state)
-            {
-                case STATE.ATTACKING:
+
+      switch (state)
+      {
+            case STATE.ATTACKING:
                     Attack();
                     break;
-                case STATE.SCANNING:
+            case STATE.SCANNING:
                     Scanning();
                     break;
-                case STATE.MOVING:
-                    Invoke("Moving", wanderTime);
+            case STATE.MOVING:
+                    Moving();
                     break;
-                case STATE.DEAD:
+            case STATE.PATROLLING:
+                    Patrol();
+                    break;
+            case STATE.DEAD:
                     DeleteUnit();
                     break;
         }
