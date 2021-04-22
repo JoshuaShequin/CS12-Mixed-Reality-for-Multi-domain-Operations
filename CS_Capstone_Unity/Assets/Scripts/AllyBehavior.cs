@@ -36,7 +36,7 @@ public class AllyBehavior : MonoBehaviour
     private RaycastHit hitInfo;
 
     // Behavior States
-    private enum STATE
+    public enum STATE
     {
         SCANNING, MOVING, ATTACKING, PATROLLING, DEAD
     }
