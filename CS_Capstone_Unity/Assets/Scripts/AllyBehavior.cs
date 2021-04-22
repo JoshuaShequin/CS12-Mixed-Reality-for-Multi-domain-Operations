@@ -135,6 +135,12 @@ public class AllyBehavior : MonoBehaviour
         }
     }
 
+    // Move to specified vector3 destination
+    public void MoveToVector(Vector3 destination)
+    {
+        agent.destination = destination;
+    }
+
 
     // Will check for hostile vision collision and return a bool
     public bool CheckLineOfSight()
