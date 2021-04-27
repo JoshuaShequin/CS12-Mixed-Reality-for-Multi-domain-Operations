@@ -35,6 +35,11 @@ public class AllyBehavior : MonoBehaviour
     public float visionDistance = 50;
     private RaycastHit hitInfo;
 
+    // Variables for the Trail
+    public TrailRenderer trail;
+    public bool trail_active = true;
+    private int enable_time = 60; // the trail renderer needs to exist for a few frames before we hide it
+
     // Behavior States
     public enum STATE
     {
@@ -56,6 +61,7 @@ public class AllyBehavior : MonoBehaviour
         // Set starting states
         state = STATE.SCANNING;
         fireOrders = FIRE_ORDERS.FREE_FIRE;
+
     }
 
     void Update()
@@ -67,16 +73,29 @@ public class AllyBehavior : MonoBehaviour
         }
 
         // Currently uses shift-Click to set a patrol point
-        if (  ( Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) ) && Input.GetMouseButtonDown(0) ) {
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetMouseButtonDown(0))
+        {
             AddPatrolPoint();
         }
 
         // Clear all set patrol points on ctrl-lmb
-        if (( (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) ) && Input.GetMouseButtonDown(0)) ) {
+        if (((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetMouseButtonDown(0)))
+        {
             RemovePatrolPoints();
         }
 
         BehaviorStateMachine();
+
+        // the trail renderer needs to exist for a few movement frames before we hide it
+        if (enable_time > 0)
+        {
+            enable_time -= 1;
+        }
+        else if (enable_time == 0)
+        {
+            ToggleTrail();
+            enable_time = -1;
+        };
     }
 
     // Add a patrol point for the unit
@@ -133,12 +152,6 @@ public class AllyBehavior : MonoBehaviour
         {
             agent.destination = hit.point;
         }
-    }
-
-    // Move to specified vector3 destination
-    public void MoveToVector(Vector3 destination)
-    {
-        agent.destination = destination;
     }
 
 
@@ -245,7 +258,7 @@ public class AllyBehavior : MonoBehaviour
         else
         {
             state = STATE.MOVING;
-           
+
         }
     }
 
@@ -285,23 +298,31 @@ public class AllyBehavior : MonoBehaviour
     private void BehaviorStateMachine()
     {
 
-      switch (state)
-      {
+        switch (state)
+        {
             case STATE.ATTACKING:
-                    Attack();
-                    break;
+                Attack();
+                break;
             case STATE.SCANNING:
-                    Scanning();
-                    break;
+                Scanning();
+                break;
             case STATE.MOVING:
-                    Moving();
-                    break;
+                Moving();
+                break;
             case STATE.PATROLLING:
-                    Patrol();
-                    break;
+                Patrol();
+                break;
             case STATE.DEAD:
-                    DeleteUnit();
-                    break;
+                DeleteUnit();
+                break;
         }
+    }
+
+    public void ToggleTrail()
+    {
+        Debug.Log(trail_active);
+        trail_active = !trail_active;
+        Debug.Log(trail_active);
+        trail.enabled = trail_active;
     }
 }
