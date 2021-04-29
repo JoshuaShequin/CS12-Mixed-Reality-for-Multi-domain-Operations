@@ -130,10 +130,8 @@ public class NPCTracker : MonoBehaviour
             bool cluster_next = (Random.value < cluster_chance);
             int current_cluster_size = 0;
             int rnd_idx = Random.Range(0, spawn_points.Length);
-            Debug.Log(cluster_next);
             for (int i = 0; i < enemy_normal_NPC_count; i++)
             {
-                Debug.Log(i);
                 if (!cluster_next)
                 {
                     rnd_idx = Random.Range(0, spawn_points.Length);

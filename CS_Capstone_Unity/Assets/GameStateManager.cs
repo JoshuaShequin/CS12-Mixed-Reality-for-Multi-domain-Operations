@@ -87,17 +87,15 @@ public class GameStateManager : MonoBehaviour
         }
 
 
-        for (int i = 0; i < ally_normal_NPC_count; i++)
+        for (int i = 0; i < recorded_normal_ally_count; i++)
         {
             Instantiate(normalAllyUnit, new Vector3(58.1f + i, 249.6f, 417.8f), Quaternion.identity);
         }
         bool cluster_next = (Random.value < cluster_chance);
         int current_cluster_size = 0;
         int rnd_idx = Random.Range(0, spawn_points.Length);
-        Debug.Log(cluster_next);
-        for (int i = 0; i < enemy_normal_NPC_count; i++)
+        for (int i = 0; i < recorded_normal_enemy_count; i++)
         {
-            Debug.Log(i);
             if (!cluster_next)
             {
                 rnd_idx = Random.Range(0, spawn_points.Length);
