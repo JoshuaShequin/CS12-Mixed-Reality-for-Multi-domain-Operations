@@ -78,7 +78,14 @@ public class AllyBehavior : MonoBehaviour
         // Currently uses shift-Click to set a patrol point
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetMouseButtonDown(0))
         {
-            AddPatrolPoint();
+            // Toss the mouse click position
+            RaycastHit hit;
+
+            // This cast input key will have to be matched to VR input
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity) && hit.transform != null)
+            {
+                AddPatrolPoint(hit.point);
+            }
         }
 
         // Clear all set patrol points on ctrl-lmb
@@ -86,6 +93,7 @@ public class AllyBehavior : MonoBehaviour
         {
             RemovePatrolPoints();
         }
+
 
         BehaviorStateMachine();
 
@@ -124,17 +132,10 @@ public class AllyBehavior : MonoBehaviour
     }
 
     // Add a patrol point for the unit
-    void AddPatrolPoint()
+    public void AddPatrolPoint(Vector3 position)
     {
         Debug.Log("==Patrol point added");
-        RaycastHit hit;
-
-        // This cast input key will have to be matched to VR input
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity) && hit.transform != null)
-        {
-            Debug.Log(hit.point);
-            patrolPoints.Add(hit.point);
-        }
+        patrolPoints.Add(position);
 
         // If this is the first patrol point, start moving towards it
         if (patrolPoints.Count == 1)
@@ -142,7 +143,6 @@ public class AllyBehavior : MonoBehaviour
             agent.destination = patrolPoints[0];
         }
         state = STATE.PATROLLING;
-
     }
 
 
