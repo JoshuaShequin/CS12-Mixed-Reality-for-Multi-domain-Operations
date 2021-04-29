@@ -15,10 +15,13 @@ public class AllyBehavior : MonoBehaviour
     public int health = 100;
     public STATE state;            // General behavior state
     FIRE_ORDERS fireOrders;
+    public float alertRadius = 15.0f;
+    public static int alertCooldown = 4;
+    private int alertTix = 0;
 
     // Movement Params
     public int wanderRadius = 50;
-    public int wanderTime = 100;
+    public int wanderPause = 5;                                 // How long a unit will pause at a destination before moving again
     private int wanderTix = 0;                                  // Gives delay to movement commands to prevent stutter steps
     private List<Vector3> patrolPoints = new List<Vector3>();   // Holds patrol point positions
     private int destPoint = 0;                                  // Index for current patrol point target
@@ -98,9 +101,26 @@ public class AllyBehavior : MonoBehaviour
                 trail_active = true;
                 ToggleTrail();
                 enable_time = -1;
-            };
+            }
         }
-        
+    }
+
+    // Alerts units within a radius from the center to help in battle at destination.
+    void AlertTeam(Vector3 center, float radius, Vector3 destination)
+    {
+        Debug.Log("==A unit is asking nearby units for help.");
+        // Mask for only the Ally unit layer 8
+        int layerMask = 1 << 8;
+        Collider[] hitColliders = Physics.OverlapSphere(center, radius, layerMask);
+
+        // For each unit found in the sphere, ask them to come to you
+        foreach (var hitCollider in hitColliders)
+        {
+            // End patrol and send to destination. If backtracking is really wanted, old points will have to be stored
+            hitCollider.gameObject.GetComponent<AllyBehavior>().RemovePatrolPoints();
+            hitCollider.gameObject.GetComponent<AllyBehavior>().MoveToVector(destination);
+            hitCollider.gameObject.GetComponent<AllyBehavior>().state = STATE.ATTACKING;
+        }
     }
 
     // Add a patrol point for the unit
@@ -119,7 +139,7 @@ public class AllyBehavior : MonoBehaviour
         // If this is the first patrol point, start moving towards it
         if (patrolPoints.Count == 1)
         {
-            agent.SetDestination(patrolPoints[0]);
+            agent.destination = patrolPoints[0];
         }
         state = STATE.PATROLLING;
 
@@ -135,15 +155,20 @@ public class AllyBehavior : MonoBehaviour
     }
 
 
-    // Will move between patrol points
+    // Will move between patrol points. Called in PATROLLING state
     void Patrol()
     {
+        
         // Do we need to update the patrol point yet?
-        if ((!agent.pathPending && agent.remainingDistance <= 0.5f) && patrolPoints.Count > 0)
+        if (!agent.pathPending)
         {
+            if (agent.remainingDistance <= 2.5f && patrolPoints.Count > 0)
+            {
+                destPoint = (destPoint + 1) % patrolPoints.Count;
+            }
             agent.SetDestination(patrolPoints[destPoint]);
-            destPoint = (destPoint + 1) % patrolPoints.Count;
         }
+
     }
 
 
@@ -155,10 +180,14 @@ public class AllyBehavior : MonoBehaviour
         // This cast input key will have to be matched to VR input
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
         {
-            agent.destination = hit.point;
+            agent.SetDestination(hit.point);
         }
     }
 
+    public void MoveToVector(Vector3 target)
+    {
+        agent.SetDestination(target);
+    }
 
     // Will check for hostile vision collision and return a bool
     public bool CheckLineOfSight()
@@ -229,6 +258,15 @@ public class AllyBehavior : MonoBehaviour
         {
             if (canShoot)
             {
+                // Alert nearby units
+                if (alertTix == 0)
+                {
+                    AlertTeam(transform.position, alertRadius, currTarget.transform.position);
+                    alertTix = alertCooldown;
+                }
+                else
+                    alertTix--;
+
                 // FaceTarget is called to ensure correct target position
                 FaceTarget();
 
@@ -282,13 +320,20 @@ public class AllyBehavior : MonoBehaviour
     // Unit will wander in a direction no farther then the wanderRadius
     public void Moving()
     {
-        if (--wanderTix > 0) { state = STATE.SCANNING; }
-        else
+        // This will ensure that destination orders are followed. 
+        // MoveTo* functions can circumvent this block allowing for priority movement.
+        if (agent.remainingDistance <= 2.5f)
         {
-            Vector3 newPosition = RandomNavSphere(transform.position, wanderRadius, -1);
-            agent.SetDestination(newPosition);
-            state = STATE.SCANNING;
-            wanderTix = wanderTime;
+
+            // WanderTix gives pause at stop points
+            if (--wanderTix > 0) { state = STATE.SCANNING; }
+            else
+            {
+                Vector3 newPosition = RandomNavSphere(transform.position, wanderRadius, -1);
+                agent.SetDestination(newPosition);
+                state = STATE.SCANNING;
+                wanderTix = wanderPause;
+            }
         }
     }
 
