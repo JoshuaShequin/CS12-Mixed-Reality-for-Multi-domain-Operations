@@ -37,7 +37,7 @@ public class AllyBehavior : MonoBehaviour
 
     // Variables for the Trail
     public TrailRenderer trail;
-    public bool trail_active = true;
+    public bool trail_active = false;
     private int enable_time = 60; // the trail renderer needs to exist for a few frames before we hide it
 
     // Behavior States
@@ -87,15 +87,20 @@ public class AllyBehavior : MonoBehaviour
         BehaviorStateMachine();
 
         // the trail renderer needs to exist for a few movement frames before we hide it
-        if (enable_time > 0)
+        if (!trail_active)
         {
-            enable_time -= 1;
+            if (enable_time > 0)
+            {
+                enable_time -= 1;
+            }
+            else if (enable_time == 0)
+            {
+                trail_active = true;
+                ToggleTrail();
+                enable_time = -1;
+            };
         }
-        else if (enable_time == 0)
-        {
-            ToggleTrail();
-            enable_time = -1;
-        };
+        
     }
 
     // Add a patrol point for the unit
@@ -320,9 +325,7 @@ public class AllyBehavior : MonoBehaviour
 
     public void ToggleTrail()
     {
-        Debug.Log(trail_active);
         trail_active = !trail_active;
-        Debug.Log(trail_active);
         trail.enabled = trail_active;
     }
 }

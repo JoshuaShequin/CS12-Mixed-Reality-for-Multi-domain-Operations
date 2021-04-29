@@ -1897,7 +1897,7 @@ MonoBehaviour:
   visionRadius: 30
   visionDistance: 30
   trail: {fileID: 6507032467461766219}
-  trail_active: 1
+  trail_active: 0
 --- !u!122 &8948084918877219120
 Halo:
   m_ObjectHideFlags: 0

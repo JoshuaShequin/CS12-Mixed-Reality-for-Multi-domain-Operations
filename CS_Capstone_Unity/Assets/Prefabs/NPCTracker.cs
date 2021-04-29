@@ -15,7 +15,7 @@ public class NPCTracker : MonoBehaviour
 
     public GameObject Drawing_base;
 
-    int max_NPCs = 5;
+    int max_NPCs = 9;
     int fontSize = 16;
     float textHeight = 25f;
     float textWidth = 15f;
@@ -36,6 +36,17 @@ public class NPCTracker : MonoBehaviour
 
     public GameObject normalAllyUnit;
     public GameObject normalEnemyUnit;
+
+    private Vector3[] spawn_points = new[] { new Vector3(-277f, 249.6f, 637.5f), new Vector3(-101.1f, 249.6f, 636.5f), new Vector3(-127f, 249.6f, 588.4f),
+                                             new Vector3(-180f, 249.6f, 570.8f), new Vector3(-200f, 249.6f, 534.9f), new Vector3(-154f, 249.6f, 509.8f),
+                                             new Vector3(-85f, 249.6f, 471.5f), new Vector3(-112f, 249.6f, 422f), new Vector3(-247f, 249.6f, 497.5f),
+                                             new Vector3(-250f, 251f, 456.5f), new Vector3(-140.9f, 251f, 497.5f), new Vector3(-198f, 251f, 574.5f),
+                                             new Vector3(-200f, 251f, 622.5f), new Vector3(-35.3f, 251f, 555.5f), new Vector3(-34.6f, 251f, 580.5f),
+                                             new Vector3(-5.6f, 251f, 564.5f), new Vector3(-25f, 251f, 529.5f), new Vector3(-38.6f, 251f, 504.5f),
+                                             new Vector3(-26.1f, 251f, 480.1f)};
+
+    public float cluster_chance = 0.0f;
+    public int cluster_size = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -116,9 +127,35 @@ public class NPCTracker : MonoBehaviour
             {
                 Instantiate(normalAllyUnit, new Vector3(58.1f + i, 249.6f, 417.8f), Quaternion.identity);
             }
+            bool cluster_next = (Random.value < cluster_chance);
+            int current_cluster_size = 0;
+            int rnd_idx = Random.Range(0, spawn_points.Length);
+            Debug.Log(cluster_next);
             for (int i = 0; i < enemy_normal_NPC_count; i++)
             {
-                Instantiate(normalEnemyUnit, new Vector3(-277.1f + i, 249.6f, 637.7f), Quaternion.identity);
+                Debug.Log(i);
+                if (!cluster_next)
+                {
+                    rnd_idx = Random.Range(0, spawn_points.Length);
+                    cluster_next = (Random.value < cluster_chance);
+
+                }
+                else if(current_cluster_size < cluster_size)
+                {
+                    current_cluster_size = current_cluster_size + 1;
+                    if (current_cluster_size == cluster_size)
+                    {
+                        cluster_next = (Random.value < cluster_chance);
+                        current_cluster_size = 0;
+                        Instantiate(normalEnemyUnit, spawn_points[rnd_idx], Quaternion.identity);
+                        rnd_idx = Random.Range(0, spawn_points.Length);
+                        continue;
+                    }
+                    
+                }
+                    
+                Instantiate(normalEnemyUnit, spawn_points[rnd_idx], Quaternion.identity);
+
             }
 
             spawned_units = true;

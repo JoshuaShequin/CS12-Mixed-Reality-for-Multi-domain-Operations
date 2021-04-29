@@ -536,6 +536,16 @@ PrefabInstance:
       propertyPath: Drawing_base
       value: 
       objectReference: {fileID: 126114308}
+    - target: {fileID: 7788887266054036487, guid: b3778b159a8583941a1d97fdbaa11bcc,
+        type: 3}
+      propertyPath: cluster_chance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7788887266054036487, guid: b3778b159a8583941a1d97fdbaa11bcc,
+        type: 3}
+      propertyPath: cluster_size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3778b159a8583941a1d97fdbaa11bcc, type: 3}
 --- !u!1 &346299592
