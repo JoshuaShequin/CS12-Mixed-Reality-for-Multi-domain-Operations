@@ -13,14 +13,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2021-04-28T12:06:02.963-07:00
-  initializedAtString: 2021-04-28T11:44:27.396-07:00
+  lastUpdatedAtString: 2021-05-03T10:35:48.261-07:00
+  initializedAtString: 2021-05-03T10:27:18.040-07:00
   localBranches:
   - name: main
     tracking: origin/main
   - name: VR-Controls
     tracking: origin/VR-Controls
   remoteBranches:
+  - name: origin/feature-AlertNPCs
+    tracking: '[None]'
+  - name: origin/Feature_GameObjectiveOne
+    tracking: '[None]'
   - name: origin/Feature_path_of_ally_units
     tracking: '[None]'
   - name: origin/HEAD
@@ -57,12 +61,24 @@ MonoBehaviour:
     - origin
     subKeys:
     - Values:
+      - feature-AlertNPCs
+      - Feature_GameObjectiveOne
       - Feature_path_of_ally_units
       - HEAD
       - main
       - VR-Controls
     subKeyValues:
     - Values:
+      - name: feature-AlertNPCs
+        remote:
+          name: origin
+          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
+        trackingBranch: 
+      - name: Feature_GameObjectiveOne
+        remote:
+          name: origin
+          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
+        trackingBranch: 
       - name: Feature_path_of_ally_units
         remote:
           name: origin

@@ -16,7 +16,7 @@ public class NPCTracker : MonoBehaviour
     public GameObject Drawing_base;
 
     int max_NPCs = 5;
-    int fontSize = 16;
+    int fontSize = 10;
     float textHeight = 25f;
     float textWidth = 15f;
 

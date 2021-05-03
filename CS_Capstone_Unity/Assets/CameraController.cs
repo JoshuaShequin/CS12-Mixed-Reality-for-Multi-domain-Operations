@@ -4,12 +4,14 @@ public class CameraController : MonoBehaviour
 {
 	public float panSpeed = 100f;
 	public float zoomSPeed = 200f;
+	public float tiltSpeed = 10f;
 	public float panBorderThickness = 80f;
 	public Vector2 panLimit;
 
 	void Update()
 	{
 		Vector3 pos = transform.position;
+		Quaternion tilt = transform.rotation;
 
 
 
@@ -33,6 +35,12 @@ public class CameraController : MonoBehaviour
 		else if (Input.GetAxis("Mouse ScrollWheel") > 0f)
 		{
 			pos.y -= zoomSPeed * Time.deltaTime;
+		}
+		else if (Input.GetKey("LeftShift") && Input.GetKey("w")) {
+			tilt.x += tiltSpeed * Time.deltaTime;
+		}
+		else if (Input.GetKey("LeftShift") && Input.GetKey("s")) {
+			tilt.x -= tiltSpeed * Time.deltaTime;
 		}
 
 

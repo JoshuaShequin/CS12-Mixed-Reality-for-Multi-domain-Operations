@@ -6,10 +6,14 @@ using UnityEngine.UI;
 public class ActiveUnitsDisplay : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject UnitLogView;
+    public GameObject ActiveUnitView;
     void Start()
     {
         GameObject[] gameObjects;
         gameObjects = GameObject.FindGameObjectsWithTag("Ally_NPC");
+
+      
    
 
         if(gameObjects.Length == 0) {

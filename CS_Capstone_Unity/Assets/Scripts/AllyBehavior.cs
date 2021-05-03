@@ -59,6 +59,9 @@ public class AllyBehavior : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             MoveToDest();
+        } else if(OVRInput.GetDown(OVRInput.Button.One)) {
+            //MoveToVector();
+            Debug.Log("Unit has been clicked");
         }
 
         BehaviorStateMachine();
@@ -71,10 +74,15 @@ public class AllyBehavior : MonoBehaviour
         RaycastHit hit;
 
         // This cast input key will have to be matched to VR input
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100) )
         {
             agent.destination = hit.point;
         }
+    }
+
+    public void MoveToVector(Vector3 target)
+    {
+        agent.destination = target;
     }
 
 
