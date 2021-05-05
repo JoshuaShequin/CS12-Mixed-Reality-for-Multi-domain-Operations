@@ -346,7 +346,7 @@ public class OVRPlayerController : MonoBehaviour
 				MoveScale = 0.70710678f;
 
 			// No positional movement if we are in the air
-			if (!Controller.isGrounded)
+			if (Controller.isGrounded)
 				MoveScale = 0.0f;
 
 			MoveScale *= SimulationRate * Time.deltaTime;
