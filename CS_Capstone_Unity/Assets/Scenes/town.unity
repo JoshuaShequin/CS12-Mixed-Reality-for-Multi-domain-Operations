@@ -65598,11 +65598,56 @@ PrefabInstance:
       propertyPath: m_fogOfWarPlane
       value: 
       objectReference: {fileID: 1284300972}
+    - target: {fileID: 45027892737699046, guid: 6c97faed57904914fa2d7b692cd083ee,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45027892737699046, guid: 6c97faed57904914fa2d7b692cd083ee,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45027892737699046, guid: 6c97faed57904914fa2d7b692cd083ee,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45027893410200557, guid: 6c97faed57904914fa2d7b692cd083ee,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45027893410200557, guid: 6c97faed57904914fa2d7b692cd083ee,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45027893410200557, guid: 6c97faed57904914fa2d7b692cd083ee,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 45027893800730665, guid: 6c97faed57904914fa2d7b692cd083ee,
         type: 3}
       propertyPath: fogOfWar
       value: 
       objectReference: {fileID: 1284300972}
+    - target: {fileID: 45027893806460640, guid: 6c97faed57904914fa2d7b692cd083ee,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45027893806460640, guid: 6c97faed57904914fa2d7b692cd083ee,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45027893806460640, guid: 6c97faed57904914fa2d7b692cd083ee,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2285534383153581995, guid: 6c97faed57904914fa2d7b692cd083ee,
         type: 3}
       propertyPath: m_AnchorMax.x
