@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenu;
     public GameObject playerHud;
+    public GameObject settingsMenu;
     // Update is called once per frame
 
     void Start() {
@@ -44,6 +45,8 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Settings() {
+        pauseMenu.SetActive(false);
+        settingsMenu.SetActive(true);
         Debug.Log("Settings button pressed");
     }
 

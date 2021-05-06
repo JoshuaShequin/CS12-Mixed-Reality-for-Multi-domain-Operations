@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2021-05-05T13:31:41.996-07:00
-  initializedAtString: 2021-05-05T13:31:41.996-07:00
+  lastUpdatedAtString: 2021-05-05T19:07:26.948-07:00
+  initializedAtString: 2021-05-05T19:07:26.948-07:00
   currentGitRemote:
     name: origin
     url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
@@ -25,13 +25,13 @@ MonoBehaviour:
     token: 
   currentGitBranch:
     name: VR-Controls-Updated
-    tracking: 
+    tracking: origin/VR-Controls-Updated
   currentConfigBranch:
     name: VR-Controls-Updated
     remote:
-      name: 
-      url: 
-    trackingBranch: 
+      name: origin
+      url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
+    trackingBranch: VR-Controls-Updated
   currentConfigRemote:
     name: origin
     url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
