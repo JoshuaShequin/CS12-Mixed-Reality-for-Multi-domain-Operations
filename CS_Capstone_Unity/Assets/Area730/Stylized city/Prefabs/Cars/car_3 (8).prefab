@@ -1200,6 +1200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485186}
   - component: {fileID: 9569134}
+  - component: {fileID: 8143167040509732151}
   m_Layer: 0
   m_Name: car_3 (8)
   m_TagString: Untagged
@@ -1245,3 +1246,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &8143167040509732151
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12, y: 6.5, z: 6.5}
+  m_Center: {x: 0, y: 0, z: 0}
