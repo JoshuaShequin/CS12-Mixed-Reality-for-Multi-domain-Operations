@@ -1183,8 +1183,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3079867742075160655, guid: 7bdb2da9ab4b86c4bb9dc0f5ef78926f,
-          type: 3}
+      - m_Target: {fileID: 5448349194214893180}
         m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
@@ -2370,7 +2369,7 @@ PrefabInstance:
     - target: {fileID: 700414923100452401, guid: 063b4ca4b8efb3e4fa08b79b6838409c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 700414923100452401, guid: 063b4ca4b8efb3e4fa08b79b6838409c,
         type: 3}
