@@ -43,6 +43,8 @@ public class AllyBehavior : MonoBehaviour
     public bool trail_active = false;
     private int enable_time = 60; // the trail renderer needs to exist for a few frames before we hide it
 
+
+
     // Behavior States
     public enum STATE
     {
@@ -181,8 +183,9 @@ public class AllyBehavior : MonoBehaviour
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
         {
             agent.SetDestination(hit.point);
-        }
+        } 
     }
+
 
     public void MoveToVector(Vector3 target)
     {

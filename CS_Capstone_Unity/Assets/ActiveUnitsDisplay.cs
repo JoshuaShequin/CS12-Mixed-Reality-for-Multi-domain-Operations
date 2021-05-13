@@ -13,7 +13,7 @@ public class ActiveUnitsDisplay : MonoBehaviour
         GameObject[] gameObjects;
         gameObjects = GameObject.FindGameObjectsWithTag("Ally_NPC");
 
-      
+        
    
 
         if(gameObjects.Length == 0) {
