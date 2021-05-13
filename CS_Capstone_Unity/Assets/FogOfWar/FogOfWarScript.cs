@@ -31,9 +31,14 @@ public class FogOfWarScript : MonoBehaviour
     {
         units = GameObject.FindGameObjectsWithTag(AllyUnitName);
         EnemyUnits = GameObject.FindGameObjectsWithTag(EnemyUnitName);
+
+        
+
         foreach (GameObject Ally in units)
         {
-            Ray r = new Ray(transform.position, Ally.transform.position - transform.position);
+            Vector3 above_pos = Ally.transform.position;
+            above_pos.y = transform.position.y;
+            Ray r = new Ray(above_pos, Ally.transform.position - above_pos);
             RaycastHit hit;
             
             if (Physics.Raycast(r, out hit, 1000, m_fogLayer, QueryTriggerInteraction.Collide))
@@ -69,7 +74,9 @@ public class FogOfWarScript : MonoBehaviour
             // Debug.Log(eb);
             if (eb.state == EnemyBehavior.STATE.ATTACKING)
             {
-                Ray r = new Ray(transform.position, Enemy.transform.position - transform.position);
+                Vector3 above_pos = Enemy.transform.position;
+                above_pos.y = transform.position.y;
+                Ray r = new Ray(above_pos, Enemy.transform.position - above_pos);
                 RaycastHit hit;
 
                 if (Physics.Raycast(r, out hit, 1000, m_fogLayer, QueryTriggerInteraction.Collide))

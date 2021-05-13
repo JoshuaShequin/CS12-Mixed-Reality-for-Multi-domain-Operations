@@ -17,8 +17,6 @@ public class GameStateManager : MonoBehaviour
 
     string game_state = "STARTING";
 
-    GameObject mainCamera;
-
     public GameObject endgameUI;
 
     public GameObject normalAllyUnit;
@@ -42,7 +40,7 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.mainCamera = GameObject.FindGameObjectsWithTag("MainCamera")[0];
+        
     }
 
     // Update is called once per frame
