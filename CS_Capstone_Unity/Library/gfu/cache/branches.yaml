@@ -13,27 +13,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2021-05-13T22:05:31.524-07:00
-  initializedAtString: 2021-05-13T20:24:51.438-07:00
+  lastUpdatedAtString: 2021-05-14T11:54:13.642-07:00
+  initializedAtString: 2021-05-14T11:54:13.630-07:00
   localBranches:
   - name: Feature_active_unit_view
     tracking: origin/Feature_active_unit_view
   - name: main
     tracking: origin/main
-  - name: VR-Controls-Updated
-    tracking: origin/VR-Controls-Updated
   remoteBranches:
-  - name: origin/Feature_active_unit_view
-    tracking: '[None]'
-  - name: origin/Fix_FoW_VR_cheating
-    tracking: '[None]'
-  - name: origin/Fix_terrain_colliders
-    tracking: '[None]'
   - name: origin/HEAD
-    tracking: '[None]'
-  - name: origin/main
-    tracking: '[None]'
-  - name: origin/VR-Controls-Updated
     tracking: '[None]'
   remotes:
   - name: origin
@@ -47,7 +35,6 @@ MonoBehaviour:
     keys:
     - Feature_active_unit_view
     - main
-    - VR-Controls-Updated
     values:
     - name: Feature_active_unit_view
       remote:
@@ -59,50 +46,15 @@ MonoBehaviour:
         name: origin
         url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
       trackingBranch: main
-    - name: VR-Controls-Updated
-      remote:
-        name: origin
-        url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
-      trackingBranch: VR-Controls-Updated
   remoteConfigBranches:
     keys:
     - origin
     subKeys:
     - Values:
-      - Feature_active_unit_view
-      - Fix_FoW_VR_cheating
-      - Fix_terrain_colliders
       - HEAD
-      - main
-      - VR-Controls-Updated
     subKeyValues:
     - Values:
-      - name: Feature_active_unit_view
-        remote:
-          name: origin
-          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
-        trackingBranch: 
-      - name: Fix_FoW_VR_cheating
-        remote:
-          name: origin
-          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
-        trackingBranch: 
-      - name: Fix_terrain_colliders
-        remote:
-          name: origin
-          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
-        trackingBranch: 
       - name: HEAD
-        remote:
-          name: origin
-          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
-        trackingBranch: 
-      - name: main
-        remote:
-          name: origin
-          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
-        trackingBranch: 
-      - name: VR-Controls-Updated
         remote:
           name: origin
           url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git

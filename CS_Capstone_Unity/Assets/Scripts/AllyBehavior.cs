@@ -48,6 +48,7 @@ public class AllyBehavior : MonoBehaviour
     // VR variables
     public GameObject playerObject;
     private Transform anchor;
+    private GameObject fogofwar;
 
     // Behavior States
     public enum STATE
@@ -187,10 +188,10 @@ public class AllyBehavior : MonoBehaviour
     public void MoveToDest()
     {
         RaycastHit hit;
-        
+
 
         // This cast input key will have to be matched to VR input
-        if (Physics.Raycast(anchor.transform.position, anchor.transform.TransformDirection(Vector3.forward), out hit, 1000));
+        if (Physics.Raycast(anchor.transform.position, anchor.transform.forward, out hit, 1000));
         {
             agent.SetDestination(hit.point);
             Debug.Log("Unit moved");
