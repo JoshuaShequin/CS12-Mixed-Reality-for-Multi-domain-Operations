@@ -10,8 +10,13 @@ public class ActiveUnitsDisplay : MonoBehaviour
     public GameObject ActiveUnitView;
 
     public GameObject text_prefab;
+    public GameObject text_prefab2;
 
     private GameObject[] allies;
+    private GameObject[] ally_logs;
+    private GameObject[] ally_logs2;
+    private GameObject ally_npc_log;
+    private string[] npcStates;
 
     private bool units_selected = false;
     void Start()
@@ -23,6 +28,7 @@ public class ActiveUnitsDisplay : MonoBehaviour
     // // Update is called once per frame
     void Update()
     {
+        
         if (!units_selected)
         {
             allies = GameObject.FindGameObjectsWithTag("Ally_NPC");
@@ -31,12 +37,17 @@ public class ActiveUnitsDisplay : MonoBehaviour
                 units_selected = true;
                 foreach(GameObject ally in allies)
                 {
-                    var item = Instantiate<GameObject>(text_prefab, ActiveUnitView.transform.Find("Viewport").transform.Find("Content"));
-                    item.GetComponent<UnitStatusUpdater>().ally_NPC = ally;
+                    if(ally) {
+                        var item = Instantiate<GameObject>(text_prefab, ActiveUnitView.transform.Find("Viewport").transform.Find("Content"));
+                        item.GetComponent<UnitStatusUpdater>().ally_NPC = ally;
+                        var item1 = Instantiate<GameObject>(text_prefab2, UnitLogView.transform.Find("Viewport").transform.Find("Content"));
+                        item1.GetComponent<UnitLogUpdateScript>().ally = ally;
+                    } 
                 }
             }
 
-        }
+        } 
+
     }
 
 }

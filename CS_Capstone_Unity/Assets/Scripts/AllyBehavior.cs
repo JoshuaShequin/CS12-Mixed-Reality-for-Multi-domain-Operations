@@ -43,6 +43,11 @@ public class AllyBehavior : MonoBehaviour
     public bool trail_active = false;
     private int enable_time = 60; // the trail renderer needs to exist for a few frames before we hide it
 
+
+    // VR variables
+    public OVRInput.Controller controller;
+    public Transform trackingSpace;
+
     // Behavior States
     public enum STATE
     {
@@ -176,13 +181,16 @@ public class AllyBehavior : MonoBehaviour
     void MoveToDest()
     {
         RaycastHit hit;
+        
+        
 
         // This cast input key will have to be matched to VR input
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+        if (Physics.Raycast(trackingSpace.position, trackingSpace.TransformDirection(Vector3.forward), out hit, 400));
         {
             agent.SetDestination(hit.point);
         }
     }
+
 
     public void MoveToVector(Vector3 target)
     {

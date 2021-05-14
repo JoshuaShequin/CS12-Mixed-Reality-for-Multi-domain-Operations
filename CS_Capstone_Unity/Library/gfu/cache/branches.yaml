@@ -13,15 +13,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2021-05-08T18:38:05.650-07:00
-  initializedAtString: 2021-05-08T18:38:04.550-07:00
+  lastUpdatedAtString: 2021-05-13T20:24:52.687-07:00
+  initializedAtString: 2021-05-13T20:24:51.438-07:00
   localBranches:
+  - name: Feature_active_unit_view
+    tracking: origin/Feature_active_unit_view
   - name: main
     tracking: origin/main
   - name: VR-Controls-Updated
     tracking: origin/VR-Controls-Updated
   remoteBranches:
+  - name: origin/Feature_active_unit_view
+    tracking: '[None]'
+  - name: origin/Fix_FoW_VR_cheating
+    tracking: '[None]'
+  - name: origin/Fix_terrain_colliders
+    tracking: '[None]'
   - name: origin/HEAD
+    tracking: '[None]'
+  - name: origin/main
     tracking: '[None]'
   - name: origin/VR-Controls-Updated
     tracking: '[None]'
@@ -35,9 +45,15 @@ MonoBehaviour:
     token: 
   localConfigBranches:
     keys:
+    - Feature_active_unit_view
     - main
     - VR-Controls-Updated
     values:
+    - name: Feature_active_unit_view
+      remote:
+        name: origin
+        url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
+      trackingBranch: Feature_active_unit_view
     - name: main
       remote:
         name: origin
@@ -53,11 +69,35 @@ MonoBehaviour:
     - origin
     subKeys:
     - Values:
+      - Feature_active_unit_view
+      - Fix_FoW_VR_cheating
+      - Fix_terrain_colliders
       - HEAD
+      - main
       - VR-Controls-Updated
     subKeyValues:
     - Values:
+      - name: Feature_active_unit_view
+        remote:
+          name: origin
+          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
+        trackingBranch: 
+      - name: Fix_FoW_VR_cheating
+        remote:
+          name: origin
+          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
+        trackingBranch: 
+      - name: Fix_terrain_colliders
+        remote:
+          name: origin
+          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
+        trackingBranch: 
       - name: HEAD
+        remote:
+          name: origin
+          url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
+        trackingBranch: 
+      - name: main
         remote:
           name: origin
           url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
