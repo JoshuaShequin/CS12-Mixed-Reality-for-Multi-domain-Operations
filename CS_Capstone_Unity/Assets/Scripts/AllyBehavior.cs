@@ -10,6 +10,7 @@ public class AllyBehavior : MonoBehaviour
 
     NavMeshAgent agent;     // Baked pathing agent
 
+
     // Unit Params
     public GameObject bullet;
     public int health = 100;
@@ -45,8 +46,8 @@ public class AllyBehavior : MonoBehaviour
 
 
     // VR variables
-    public OVRInput.Controller controller;
-    public Transform trackingSpace;
+    public GameObject playerObject;
+    private Transform anchor;
 
     // Behavior States
     public enum STATE
@@ -66,6 +67,11 @@ public class AllyBehavior : MonoBehaviour
         // Get unit specific Nav Agent
         agent = GetComponent<NavMeshAgent>();
 
+
+        // Initiating player transform for controls
+        anchor = playerObject.transform.Find("RightHandAnchor");
+
+
         // Set starting states
         state = STATE.SCANNING;
         fireOrders = FIRE_ORDERS.FREE_FIRE;
@@ -75,7 +81,7 @@ public class AllyBehavior : MonoBehaviour
     void Update()
     {
         // Will have to get different input key for VR input
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) || OVRInput.Get(OVRInput.Button.One))
         {
             MoveToDest();
         }
@@ -178,16 +184,16 @@ public class AllyBehavior : MonoBehaviour
 
 
     // Can be used to raycast a destination to units
-    void MoveToDest()
+    public void MoveToDest()
     {
         RaycastHit hit;
         
-        
 
         // This cast input key will have to be matched to VR input
-        if (Physics.Raycast(trackingSpace.position, trackingSpace.TransformDirection(Vector3.forward), out hit, 400));
+        if (Physics.Raycast(anchor.transform.position, anchor.transform.TransformDirection(Vector3.forward), out hit, 1000));
         {
             agent.SetDestination(hit.point);
+            Debug.Log("Unit moved");
         }
     }
 

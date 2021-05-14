@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2021-05-13T20:16:36.026-07:00
+  lastUpdatedAtString: 2021-05-13T21:58:36.150-07:00
   initializedAtString: 2021-05-13T20:16:36.026-07:00
   entries:
   - path: CS_Capstone_Unity\Assets\ActiveUnitsDisplay.cs
@@ -22,9 +22,10 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: CS_Capstone_Unity\Assets\Player_VR.prefab
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\Player_VR.prefab
-    projectPath: Assets\Player_VR.prefab
+  - path: CS_Capstone_Unity\Assets\Area730\Stylized city\Materials\road.mat
+    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\Area730\Stylized
+      city\Materials\road.mat
+    projectPath: Assets\Area730\Stylized city\Materials\road.mat
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -34,15 +35,15 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: CS_Capstone_Unity\Assets\Prefabs\Text1.prefab
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\Prefabs\Text1.prefab
-    projectPath: Assets\Prefabs\Text1.prefab
+  - path: CS_Capstone_Unity\Assets\Prefabs\Player_VR.prefab
+    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\Prefabs\Player_VR.prefab
+    projectPath: Assets\Prefabs\Player_VR.prefab
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: CS_Capstone_Unity\Assets\Prefabs\Text1.prefab.meta
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\Prefabs\Text1.prefab.meta
-    projectPath: Assets\Prefabs\Text1.prefab.meta
+  - path: CS_Capstone_Unity\Assets\Prefabs\Player_VR.prefab.meta
+    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\Prefabs\Player_VR.prefab.meta
+    projectPath: Assets\Prefabs\Player_VR.prefab.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
@@ -58,30 +59,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: CS_Capstone_Unity\Assets\UnitLogUpdateScript.cs
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\UnitLogUpdateScript.cs
-    projectPath: Assets\UnitLogUpdateScript.cs
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: CS_Capstone_Unity\Assets\UnitLogUpdateScript.cs.meta
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Assets\UnitLogUpdateScript.cs.meta
-    projectPath: Assets\UnitLogUpdateScript.cs.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: CS_Capstone_Unity\Library\ArtifactDB
     fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ArtifactDB
     projectPath: Library\ArtifactDB
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: CS_Capstone_Unity\Library\Artifacts\99\996855d4e9519e0a812937a1526fa43c
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\Artifacts\99\996855d4e9519e0a812937a1526fa43c
-    projectPath: Library\Artifacts\99\996855d4e9519e0a812937a1526fa43c
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
   - path: CS_Capstone_Unity\Library\gfu\cache\branches.yaml
     fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\gfu\cache\branches.yaml
     projectPath: Library\gfu\cache\branches.yaml
@@ -112,9 +95,9 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: CS_Capstone_Unity\Library\InspectorExpandedItems.asset
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\InspectorExpandedItems.asset
-    projectPath: Library\InspectorExpandedItems.asset
+  - path: CS_Capstone_Unity\Library\SceneVisibilityState.asset
+    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\SceneVisibilityState.asset
+    projectPath: Library\SceneVisibilityState.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -130,33 +113,21 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: CS_Capstone_Unity\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
-    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\Library\ScriptAssemblies\Oculus.VR.dll
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ScriptAssemblies\Oculus.VR.dll
-    projectPath: Library\ScriptAssemblies\Oculus.VR.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\Library\ScriptAssemblies\Oculus.VR.Editor.dll
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ScriptAssemblies\Oculus.VR.Editor.dll
-    projectPath: Library\ScriptAssemblies\Oculus.VR.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\Library\ScriptAssemblies\Oculus.VR.Scripts.Editor.dll
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ScriptAssemblies\Oculus.VR.Scripts.Editor.dll
-    projectPath: Library\ScriptAssemblies\Oculus.VR.Scripts.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: CS_Capstone_Unity\Library\ShaderCache\EditorEncounteredVariants
     fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\ShaderCache\EditorEncounteredVariants
     projectPath: Library\ShaderCache\EditorEncounteredVariants
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe1.log
+    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe1.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe1.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe3.log
+    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\shadercompiler-UnityShaderCompiler.exe3.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -175,128 +146,6 @@ MonoBehaviour:
   - path: CS_Capstone_Unity\Library\StateCache\SceneView\aa94f9-mainStage.json
     fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\Library\StateCache\SceneView\aa94f9-mainStage.json
     projectPath: Library\StateCache\SceneView\aa94f9-mainStage.json
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\Browsers\Compat.browser
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\Browsers\Compat.browser
-    projectPath: MonoBleedingEdge\etc\mono\2.0\Browsers\Compat.browser
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\DefaultWsdlHelpGenerator.aspx
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\DefaultWsdlHelpGenerator.aspx
-    projectPath: MonoBleedingEdge\etc\mono\2.0\DefaultWsdlHelpGenerator.aspx
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\machine.config
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\machine.config
-    projectPath: MonoBleedingEdge\etc\mono\2.0\machine.config
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\settings.map
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\settings.map
-    projectPath: MonoBleedingEdge\etc\mono\2.0\settings.map
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\web.config
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\2.0\web.config
-    projectPath: MonoBleedingEdge\etc\mono\2.0\web.config
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\Browsers\Compat.browser
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\Browsers\Compat.browser
-    projectPath: MonoBleedingEdge\etc\mono\4.0\Browsers\Compat.browser
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\DefaultWsdlHelpGenerator.aspx
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\DefaultWsdlHelpGenerator.aspx
-    projectPath: MonoBleedingEdge\etc\mono\4.0\DefaultWsdlHelpGenerator.aspx
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\machine.config
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\machine.config
-    projectPath: MonoBleedingEdge\etc\mono\4.0\machine.config
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\settings.map
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\settings.map
-    projectPath: MonoBleedingEdge\etc\mono\4.0\settings.map
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\web.config
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.0\web.config
-    projectPath: MonoBleedingEdge\etc\mono\4.0\web.config
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\Browsers\Compat.browser
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\Browsers\Compat.browser
-    projectPath: MonoBleedingEdge\etc\mono\4.5\Browsers\Compat.browser
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\DefaultWsdlHelpGenerator.aspx
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\DefaultWsdlHelpGenerator.aspx
-    projectPath: MonoBleedingEdge\etc\mono\4.5\DefaultWsdlHelpGenerator.aspx
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\machine.config
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\machine.config
-    projectPath: MonoBleedingEdge\etc\mono\4.5\machine.config
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\settings.map
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\settings.map
-    projectPath: MonoBleedingEdge\etc\mono\4.5\settings.map
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\web.config
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\4.5\web.config
-    projectPath: MonoBleedingEdge\etc\mono\4.5\web.config
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\browscap.ini
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\browscap.ini
-    projectPath: MonoBleedingEdge\etc\mono\browscap.ini
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\config
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\config
-    projectPath: MonoBleedingEdge\etc\mono\config
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\MonoBleedingEdge\etc\mono\mconfig\config.xml
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\MonoBleedingEdge\etc\mono\mconfig\config.xml
-    projectPath: MonoBleedingEdge\etc\mono\mconfig\config.xml
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\New Unity Project (1)_Data\app.info
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\New
-      Unity Project (1)_Data\app.info
-    projectPath: New Unity Project (1)_Data\app.info
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: CS_Capstone_Unity\New Unity Project (1)_Data\boot.config
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\New
-      Unity Project (1)_Data\boot.config
-    projectPath: New Unity Project (1)_Data\boot.config
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -405,13 +254,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: CS_Capstone_Unity\New Unity Project (1)_Data\resources.assets
-    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\New
-      Unity Project (1)_Data\resources.assets
-    projectPath: New Unity Project (1)_Data\resources.assets
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: CS_Capstone_Unity\New Unity Project (1)_Data\sharedassets0.assets
     fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\New
       Unity Project (1)_Data\sharedassets0.assets
@@ -419,10 +261,30 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: CS_Capstone_Unity\New Unity Project (1)_Data\sharedassets0.assets.resS
+    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\New
+      Unity Project (1)_Data\sharedassets0.assets.resS
+    projectPath: New Unity Project (1)_Data\sharedassets0.assets.resS
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: CS_Capstone_Unity\New Unity Project (1)_Data\sharedassets1.assets
     fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\New
       Unity Project (1)_Data\sharedassets1.assets
     projectPath: New Unity Project (1)_Data\sharedassets1.assets
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\New Unity Project (1)_Data\sharedassets1.assets.resS
+    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\New
+      Unity Project (1)_Data\sharedassets1.assets.resS
+    projectPath: New Unity Project (1)_Data\sharedassets1.assets.resS
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: CS_Capstone_Unity\ProjectSettings\ProjectSettings.asset
+    fullPath: C:\Users\guard\Documents\CS_492\CS12-Mixed-Reality-for-Multi-domain-Operations\CS_Capstone_Unity\ProjectSettings\ProjectSettings.asset
+    projectPath: ProjectSettings\ProjectSettings.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3

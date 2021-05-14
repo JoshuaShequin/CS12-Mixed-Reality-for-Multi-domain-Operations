@@ -19,6 +19,6 @@ public class UnitLogUpdateScript : MonoBehaviour
     void Update()
     {
         AllyBehavior ab = ally.GetComponent<AllyBehavior>();
-        text.GetComponent<UnityEngine.UI.Text>().text = "Unit Status: " + ab.state + "..." + "\n";
+        text.GetComponent<UnityEngine.UI.Text>().text = "Unit Status: " + ab.state + "...\n";
     }
 }

@@ -40,13 +40,20 @@ public class ActiveUnitsDisplay : MonoBehaviour
                     if(ally) {
                         var item = Instantiate<GameObject>(text_prefab, ActiveUnitView.transform.Find("Viewport").transform.Find("Content"));
                         item.GetComponent<UnitStatusUpdater>().ally_NPC = ally;
-                        var item1 = Instantiate<GameObject>(text_prefab2, UnitLogView.transform.Find("Viewport").transform.Find("Content"));
-                        item1.GetComponent<UnitLogUpdateScript>().ally = ally;
                     } 
                 }
             }
-
+            
         } 
+
+        ally_logs = GameObject.FindGameObjectsWithTag("Ally_NPC");
+        if(ally_logs.Length > 0) {
+            foreach(GameObject al in ally_logs) {
+                var item1 = Instantiate<GameObject>(text_prefab2, UnitLogView.transform.Find("Viewport").transform.Find("Content"));
+                item1.GetComponent<UnitLogUpdateScript>().ally = al;
+            }
+        }
+      
 
     }
 
