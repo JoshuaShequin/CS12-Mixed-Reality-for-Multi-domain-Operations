@@ -10,6 +10,7 @@ public class AllyBehavior : MonoBehaviour
 
     NavMeshAgent agent;     // Baked pathing agent
 
+
     // Unit Params
     public GameObject bullet;
     public int health = 100;
@@ -43,6 +44,12 @@ public class AllyBehavior : MonoBehaviour
     public bool trail_active = false;
     private int enable_time = 60; // the trail renderer needs to exist for a few frames before we hide it
 
+
+    // VR variables
+    public GameObject playerObject;
+    private Transform anchor;
+    private GameObject fogofwar;
+
     // Behavior States
     public enum STATE
     {
@@ -61,6 +68,11 @@ public class AllyBehavior : MonoBehaviour
         // Get unit specific Nav Agent
         agent = GetComponent<NavMeshAgent>();
 
+
+        // Initiating player transform for controls
+        anchor = playerObject.transform.Find("RightHandAnchor");
+
+
         // Set starting states
         state = STATE.SCANNING;
         fireOrders = FIRE_ORDERS.FREE_FIRE;
@@ -70,7 +82,7 @@ public class AllyBehavior : MonoBehaviour
     void Update()
     {
         // Will have to get different input key for VR input
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) || OVRInput.Get(OVRInput.Button.One))
         {
             MoveToDest();
         }
@@ -173,16 +185,19 @@ public class AllyBehavior : MonoBehaviour
 
 
     // Can be used to raycast a destination to units
-    void MoveToDest()
+    public void MoveToDest()
     {
         RaycastHit hit;
 
+
         // This cast input key will have to be matched to VR input
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+        if (Physics.Raycast(anchor.transform.position, anchor.transform.forward, out hit, 1000));
         {
             agent.SetDestination(hit.point);
+            Debug.Log("Unit moved");
         }
     }
+
 
     public void MoveToVector(Vector3 target)
     {
