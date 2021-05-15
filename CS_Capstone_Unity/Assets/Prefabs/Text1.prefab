@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4610683552041766317}
   - component: {fileID: 3227844953612487769}
   - component: {fileID: 8520281840632444606}
-  - component: {fileID: 7061411068438613334}
+  - component: {fileID: 4267816542327662372}
   m_Layer: 0
   m_Name: Text1
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Unit Status: SEARCHING...'
---- !u!114 &7061411068438613334
+--- !u!114 &4267816542327662372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,8 +88,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3918173925213625329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb33cb962d3206a4a812be6dba4415d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e244554c18a5cc4dbc4707a11e0275c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ally_NPC: {fileID: 0}
+  ally: {fileID: 0}
   text: {fileID: 8520281840632444606}
