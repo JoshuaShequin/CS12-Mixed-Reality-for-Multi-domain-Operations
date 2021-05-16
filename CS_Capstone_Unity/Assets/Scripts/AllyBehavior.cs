@@ -70,7 +70,7 @@ public class AllyBehavior : MonoBehaviour
 
 
         // Initiating player transform for controls
-        anchor = playerObject.transform.Find("RightHandAnchor");
+        
 
 
         // Set starting states
@@ -81,9 +81,12 @@ public class AllyBehavior : MonoBehaviour
 
     void Update()
     {
+        anchor = playerObject.transform.Find("RightHandAnchor");
         // Will have to get different input key for VR input
-        if (Input.GetMouseButtonDown(1) || OVRInput.Get(OVRInput.Button.One))
+        if (Input.GetMouseButtonDown(1))
         {
+            MoveToDest();
+        } else if (OVRInput.GetDown(OVRInput.Button.One)) {
             MoveToDest();
         }
 

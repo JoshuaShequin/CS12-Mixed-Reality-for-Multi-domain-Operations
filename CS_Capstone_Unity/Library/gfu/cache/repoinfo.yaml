@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2021-05-14T11:48:21.285-07:00
-  initializedAtString: 2021-05-14T11:48:21.285-07:00
+  lastUpdatedAtString: 2021-05-15T19:03:41.505-07:00
+  initializedAtString: 2021-05-15T19:03:41.505-07:00
   currentGitRemote:
     name: origin
     url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: Feature_active_unit_view
-    tracking: origin/Feature_active_unit_view
+    name: main
+    tracking: origin/main
   currentConfigBranch:
-    name: Feature_active_unit_view
+    name: main
     remote:
       name: origin
       url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git
-    trackingBranch: Feature_active_unit_view
+    trackingBranch: main
   currentConfigRemote:
     name: origin
     url: https://github.com/JoshuaShequin/CS12-Mixed-Reality-for-Multi-domain-Operations.git

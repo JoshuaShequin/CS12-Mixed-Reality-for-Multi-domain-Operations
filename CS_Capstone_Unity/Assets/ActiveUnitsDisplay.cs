@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class ActiveUnitsDisplay : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject UnitLogView;
+    // public GameObject UnitLogView;
     public GameObject ActiveUnitView;
 
     public GameObject text_prefab;
-    public GameObject text_prefab2;
+
 
     private GameObject[] allies;
     private GameObject[] ally_logs;
@@ -46,13 +46,13 @@ public class ActiveUnitsDisplay : MonoBehaviour
             
         } 
 
-        ally_logs = GameObject.FindGameObjectsWithTag("Ally_NPC");
-        if(ally_logs.Length > 0) {
-            foreach(GameObject al in ally_logs) {
-                var item1 = Instantiate<GameObject>(text_prefab2, UnitLogView.transform.Find("Viewport").transform.Find("Content"));
-                item1.GetComponent<UnitLogUpdateScript>().ally = al;
-            }
-        }
+        // ally_logs = GameObject.FindGameObjectsWithTag("Ally_NPC");
+        // if(ally_logs.Length > 0) {
+        //     foreach(GameObject al in ally_logs) {
+        //         var item1 = Instantiate<GameObject>(text_prefab2, UnitLogView.transform.Find("Viewport").transform.Find("Content"));
+        //         item1.GetComponent<UnitLogUpdateScript>().ally = al;
+        //     }
+        // }
       
 
     }

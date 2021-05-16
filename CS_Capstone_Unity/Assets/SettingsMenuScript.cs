@@ -12,10 +12,10 @@ public class SettingsMenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         SettingsMenuCanvas.SetActive(false);
-        gameObjects = GameObject.FindGameObjectsWithTag("Ally_NPC");
     }
 
     public void togglePath() {
+        gameObjects = GameObject.FindGameObjectsWithTag("Ally_NPC");
         foreach (GameObject Ally in gameObjects) {
             AllyBehavior ab = Ally.GetComponent<AllyBehavior>();
             ab.ToggleTrail();
