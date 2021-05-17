@@ -49,6 +49,9 @@ public class AllyBehavior : MonoBehaviour
     public GameObject playerObject;
     private Transform anchor;
     private GameObject fogofwar;
+    private bool isSelected = false;
+    public GameObject selectedSprite;
+    
 
     // Behavior States
     public enum STATE
@@ -70,7 +73,8 @@ public class AllyBehavior : MonoBehaviour
 
 
         // Initiating player transform for controls
-        
+
+        selectedSprite.SetActive(false);
 
 
         // Set starting states
@@ -83,12 +87,20 @@ public class AllyBehavior : MonoBehaviour
     {
         anchor = playerObject.transform.Find("RightHandAnchor");
         // Will have to get different input key for VR input
-        if (Input.GetMouseButtonDown(1))
-        {
-            MoveToDest();
-        } else if (OVRInput.GetDown(OVRInput.Button.One)) {
-            MoveToDest();
+
+        if(OVRInput.GetUp(OVRInput.Button.One)) {
+            RaycastHit hit;
+ 
+            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1000)) {
+                MoveToVector(hit.point);
+                Debug.Log("Moving to " + hit.point);
+            }
+
+           
         }
+
+
+
 
         // Currently uses shift-Click to set a patrol point
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetMouseButtonDown(0))
@@ -390,5 +402,15 @@ public class AllyBehavior : MonoBehaviour
     {
         trail_active = !trail_active;
         trail.enabled = trail_active;
+    }
+
+    public void SelectedUnit() {
+        if(isSelected) {
+            selectedSprite.SetActive(false);
+            isSelected = false;
+        } else {
+            isSelected = true;
+            selectedSprite.SetActive(true);
+        }
     }
 }
