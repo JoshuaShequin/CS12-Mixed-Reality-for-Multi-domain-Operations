@@ -206,7 +206,7 @@ public class AllyBehavior : MonoBehaviour
         
         RaycastHit hit;
     
-        if(Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 1000)) {
+        if(Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 1000, ~fogofwar)) {
             agent.SetDestination(hit.point);
             Debug.Log("Moving to " + hit.point);
         }   
