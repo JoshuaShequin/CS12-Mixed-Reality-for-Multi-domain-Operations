@@ -87,7 +87,7 @@ public class GameStateManager : MonoBehaviour
 
         for (int i = 0; i < recorded_normal_ally_count; i++)
         {
-            Instantiate(normalAllyUnit, new Vector3(58.1f + i, 249.6f, 417.8f), Quaternion.identity);
+            Instantiate(normalAllyUnit, new Vector3(58.1f, 249.6f, 417.8f + (i * 5)), Quaternion.identity);
         }
         bool cluster_next = (Random.value < cluster_chance);
         int current_cluster_size = 0;
