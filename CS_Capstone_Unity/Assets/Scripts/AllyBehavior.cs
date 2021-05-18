@@ -103,15 +103,16 @@ public class AllyBehavior : MonoBehaviour
 
 
         // Currently uses shift-Click to set a patrol point
-        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetMouseButtonDown(0))
+        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.GetDown(OVRInput.Button.One))
         {
             // Toss the mouse click position
             RaycastHit hit;
 
             // This cast input key will have to be matched to VR input
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity) && hit.transform != null)
+            if (Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 1000) && hit.transform != null)
             {
                 AddPatrolPoint(hit.point);
+                
             }
         }
 
@@ -205,7 +206,7 @@ public class AllyBehavior : MonoBehaviour
         
         RaycastHit hit;
     
-        if(Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 100)) {
+        if(Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 1000)) {
             agent.SetDestination(hit.point);
             Debug.Log("Moving to " + hit.point);
         }   
