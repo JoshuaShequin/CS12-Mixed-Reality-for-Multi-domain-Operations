@@ -48,7 +48,7 @@ public class AllyBehavior : MonoBehaviour
     // VR variables
     private GameObject playerObject;
     private Transform anchor;
-    private GameObject fogofwar;
+    public LayerMask fogofwar;
     private bool isSelected = false;
     public GameObject selectedSprite;
     

@@ -1983,6 +1983,9 @@ MonoBehaviour:
   visionDistance: 30
   trail: {fileID: 6507032467461766219}
   trail_active: 0
+  fogofwar:
+    serializedVersion: 2
+    m_Bits: 1024
   selectedSprite: {fileID: 3960487457666670705}
 --- !u!122 &8948084918877219120
 Halo:
