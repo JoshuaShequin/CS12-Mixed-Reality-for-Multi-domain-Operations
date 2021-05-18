@@ -109,7 +109,7 @@ public class AllyBehavior : MonoBehaviour
             RaycastHit hit;
 
             // This cast input key will have to be matched to VR input
-            if (Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 1000) && hit.transform != null)
+            if (Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 1000, ~fogofwar) && hit.transform != null)
             {
                 AddPatrolPoint(hit.point);
                 
@@ -117,7 +117,7 @@ public class AllyBehavior : MonoBehaviour
         }
 
         // Clear all set patrol points on ctrl-lmb
-        if (((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetMouseButtonDown(0)))
+        if (OVRInput.GetDown(OVRInput.Button.One) && OVRInput.GetDown(OVRInput.Button.Two))
         {
             RemovePatrolPoints();
         }
