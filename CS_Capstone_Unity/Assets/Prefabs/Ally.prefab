@@ -1877,8 +1877,6 @@ GameObject:
   - component: {fileID: 6948536290496528339}
   - component: {fileID: 8948084918877219120}
   - component: {fileID: 774384744269159174}
-  - component: {fileID: 8837199221266149436}
-  - component: {fileID: 4875188457655471967}
   m_Layer: 8
   m_Name: Ally
   m_TagString: Ally_NPC
@@ -1984,8 +1982,6 @@ MonoBehaviour:
   visionDistance: 30
   trail: {fileID: 6507032467461766219}
   trail_active: 0
-  playerObject: {fileID: 7630309206216762693, guid: 9b3aa0587d364cd429009255f1189e48,
-    type: 3}
   selectedSprite: {fileID: 3960487457666670705}
 --- !u!122 &8948084918877219120
 Halo:
@@ -2015,59 +2011,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8837199221266149436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6142470160357008732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6948536290496528339}
-          m_MethodName: SelectedUnit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4875188457655471967}
-          m_MethodName: OnGroundClick
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &4875188457655471967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6142470160357008732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d78fbcc8f92be34b9f7b3180cd879a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 8403463724272859821}
-  outText: {fileID: 0}
 --- !u!1 &6225830011588847846
 GameObject:
   m_ObjectHideFlags: 0

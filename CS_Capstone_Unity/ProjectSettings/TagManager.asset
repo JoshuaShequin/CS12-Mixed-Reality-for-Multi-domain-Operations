@@ -8,6 +8,7 @@ TagManager:
   - Ally_NPC
   - Enemy_NPC
   - HiddenMenuElement
+  - Player_Tracking_Space
   layers:
   - Default
   - TransparentFX

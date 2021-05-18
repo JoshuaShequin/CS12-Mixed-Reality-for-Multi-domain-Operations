@@ -46,7 +46,7 @@ public class AllyBehavior : MonoBehaviour
 
 
     // VR variables
-    public GameObject playerObject;
+    private GameObject playerObject;
     private Transform anchor;
     private GameObject fogofwar;
     private bool isSelected = false;
@@ -75,6 +75,9 @@ public class AllyBehavior : MonoBehaviour
         // Initiating player transform for controls
 
         selectedSprite.SetActive(false);
+        playerObject = GameObject.FindGameObjectWithTag("Player_Tracking_Space");
+        anchor = playerObject.transform.Find("TrackingSpace").transform.Find("RightHandAnchor");
+        
 
 
         // Set starting states
@@ -85,19 +88,23 @@ public class AllyBehavior : MonoBehaviour
 
     void Update()
     {
-        anchor = playerObject.transform.Find("RightHandAnchor");
+        
         // Will have to get different input key for VR input
 
-        if(OVRInput.GetUp(OVRInput.Button.One)) {
-            RaycastHit hit;
- 
-            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1000)) {
-                MoveToVector(hit.point);
-                Debug.Log("Moving to " + hit.point);
+        if(OVRInput.GetDown(OVRInput.Button.Two)) {
+            if(isSelected) {
+                SelectedUnit(false);
+            } else {
+                SelectedUnit(true);
             }
-
-           
         }
+
+        if(OVRInput.GetDown(OVRInput.Button.One)) {
+            if(isSelected) {
+                MoveToDest();
+            }
+        }
+        
 
 
 
@@ -202,15 +209,13 @@ public class AllyBehavior : MonoBehaviour
     // Can be used to raycast a destination to units
     public void MoveToDest()
     {
+        
         RaycastHit hit;
-
-
-        // This cast input key will have to be matched to VR input
-        if (Physics.Raycast(anchor.transform.position, anchor.transform.forward, out hit, 1000));
-        {
+    
+        if(Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 100)) {
             agent.SetDestination(hit.point);
-            Debug.Log("Unit moved");
-        }
+            Debug.Log("Moving to " + hit.point);
+        }   
     }
 
 
@@ -404,13 +409,8 @@ public class AllyBehavior : MonoBehaviour
         trail.enabled = trail_active;
     }
 
-    public void SelectedUnit() {
-        if(isSelected) {
-            selectedSprite.SetActive(false);
-            isSelected = false;
-        } else {
-            isSelected = true;
-            selectedSprite.SetActive(true);
-        }
+    public void SelectedUnit(bool selected) {
+        selectedSprite.SetActive(selected);
+        isSelected = selected;
     }
 }
