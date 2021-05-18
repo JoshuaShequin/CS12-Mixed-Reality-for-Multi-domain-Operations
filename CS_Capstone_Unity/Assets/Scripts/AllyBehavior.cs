@@ -91,15 +91,8 @@ public class AllyBehavior : MonoBehaviour
         
         // Will have to get different input key for VR input
 
-        if(OVRInput.GetDown(OVRInput.Button.Two)) {
-            if(isSelected) {
-                SelectedUnit(false);
-            } else {
-                SelectedUnit(true);
-            }
-        }
 
-        if(OVRInput.GetDown(OVRInput.Button.One)) {
+        if(OVRInput.GetDown(OVRInput.Button.Two)) {
             if(isSelected) {
                 MoveToDest();
             }
@@ -409,8 +402,13 @@ public class AllyBehavior : MonoBehaviour
         trail.enabled = trail_active;
     }
 
-    public void SelectedUnit(bool selected) {
-        selectedSprite.SetActive(selected);
-        isSelected = selected;
+    public void SelectedUnit() {
+        if(isSelected) {
+            selectedSprite.SetActive(false);
+            isSelected = false;
+        } else {
+            selectedSprite.SetActive(true);
+            isSelected = true;
+        }
     }
 }
