@@ -92,7 +92,7 @@ public class AllyBehavior : MonoBehaviour
         // Will have to get different input key for VR input
 
 
-        if(OVRInput.GetDown(OVRInput.Button.Two)) {
+        if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger)) {
             if(isSelected) {
                 MoveToDest();
             }
