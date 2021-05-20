@@ -31,11 +31,13 @@ CPU Requirements: Intel i5-4590 or greater
 
 RAM Requirements: The majority of VR headsets require at least 8 GB of RAM.
 
-
 System requirements will change based on the minimum requirements of your specific VR Headset.
+
+Operating System: Windows x86_64
 
 
 ## Software Requirements
+
 
 
 [Unity Hub](https://unity3d.com/get-unity/download) is recommended
@@ -46,3 +48,28 @@ System requirements will change based on the minimum requirements of your specif
 
 
 ## Build Directions
+
+1. Clone the repo however you prefer to clone from github
+ 
+2. Launch Unity Hub
+
+3. Go to the projects tab in Unity hub and click the Add button
+ 
+4. Navigate to the cloned directory of the project and select the folder 'CS_Capstone_Unity' from the root folder.
+ 
+5. Left click the project in the list of projects in the projects tab
+
+6. Wait for the Unity Editor to import everything and launch the editor
+
+7. In the editor click the file dropdown in the top left
+
+8. Click Build and Run
+
+9. Select the folder to create the build folder
+
+10. Navigate to the build folder
+
+11. Run 'Mixed Reality Multi-Domain Operations.exe' with your Oculus headset on and oculus software running.
+
+
+## KNOWN ISSUES AND BUGS
