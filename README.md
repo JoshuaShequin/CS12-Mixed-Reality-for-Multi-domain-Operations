@@ -75,12 +75,12 @@ Operating System: Windows x86_64
 ## KNOWN ISSUES AND BUGS
 
 
-###Building:
+### Building:
 
 .    Sometimes items in the project will not import correctly upon cloning which will cause all kinds of errors. Remedy by right clicking in the editor and selecting reimport all. This will make sure everything is imported correctly.
 
 
-###Main Menu Scene:
+### Main Menu Scene:
 
 ·         Button click hits twice, if button is clicked then other point on canvas clicked then the buttons action will be duplicated.
 
@@ -89,7 +89,7 @@ Operating System: Windows x86_64
 ·         No other bugs found
 
  
-###Town Scene:
+### Town Scene:
 
 ·         Ally/Enemy units can on occasion become stuck to walls leaving them stuck to the surface.
 
