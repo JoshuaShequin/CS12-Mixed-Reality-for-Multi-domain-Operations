@@ -1,4 +1,4 @@
-Sprint Goal:
+Sprint One Goal:
    A working Unity executable that provides the start of VR integration and basic environment objects.
 
 Product Log: 
@@ -28,4 +28,164 @@ Member Task :
 
 Scrum Record:
    All listed member tasks were completed. The only new roadblock in development is that the project must work with the Oculus Quest hardware instead of using a separate computer to render.
+   
+===========================================================================================================================
+Sprint Three Goal:
+   Have a visible Environment including demo NPCs.
+
+Product Log: 
+	• Attach camera to a unit
+	• Add VR controls to the main player unit
+	• Create Enemy NPCs
+	• Create Ally NPCs
+	• Create Basic Movement for NPCs
+	• Create Game SETUP
+	• Add a way to control ally characters in some way
+	
+
+Member Task :
+   Joshua Shequin:
+	• Add a way to control ally characters in some way
+
+   Johnathan Webb: 
+	• Add VR controls to the main player unit
+
+   Brenden Smith:
+	• Create Basic Movement for NPCs
+	• Create Ally NPCs
+	• Create Enemy NPCs
+
+Scrum Record:
+   This week we had issues integrating VR in to the project. And that was our largest blocker.
+  
+===========================================================================================================================
+Sprint Four Goal:
+   make NPCs start to become autonomous.
+
+Product Log: 
+	• Attach camera to a unit
+	• Add VR controls to the main player unit
+	• Finish Main Menu and Game Setup
+	• Start adding vision components for AI
+	• Start working on goals and routines of the normal behavior NPC
+	• Add a shooting mechanic for the NPCs
+	
+
+Member Task :
+   Joshua Shequin:
+	• Finish Main Menu and Game Setup
+	• Start working on goals and routines of the normal behavior NPC
+
+   Johnathan Webb: 
+	• Add VR controls to the main player unit
+	
+
+   Brenden Smith:
+	• Start adding vision components for AI
+
+Scrum Record:
+   Continued issues with the VR integration as our blocker, as well as communication with our Project Partner has basically entirely stopped.
+===========================================================================================================================
+Sprint Five Goal:
+   More work with NPCs and start of the game logic.
+
+Product Log: 
+	• continue work on the FSM for the NPCs
+	• create UI in VR for controlling movement of Ally NPCs
+	• Create UI in VR for showing status of Ally NPCs
+	• Add game manager to track the state of the game
+	• Add a shooting mechanic for the NPCs
+	
+
+Member Task :
+   Joshua Shequin:
+	• Add game manager to track the state of the game
+
+   Johnathan Webb: 
+	
+
+   Brenden Smith:
+	• continue work on the FSM for the NPCs
+	• Add a shooting mechanic for the NPCs
+
+Scrum Record:
+   Continued issues with the VR integration as our blocker, as well as communication with our Project Partner has basically entirely stopped. Changing project partner soon
+===========================================================================================================================
+Sprint Six Goal:
+   Work whatever we can towards some visual changes for the game to make the product more valuable
+
+Product Log: 
+	• Switch VR plugin to SteamVR
+	• create visual effect to differentiate units
+	• health bar over units
+	• highlight selected unit
+	• fog of war
+	• make the bullets more visible with an after trail
+	
+
+Member Task :
+   Joshua Shequin:
+	• health bar over units
+	• create visual effect to differentiate units
+
+   Johnathan Webb: 
+	
+
+   Brenden Smith:
+	• make the bullets more visible with an after trail
+
+Scrum Record:
+   Continued issues with the VR integration as our blocker. Changed project partner. We did not end up switching to steamVR.
+===========================================================================================================================  
+Sprint Seven Goal:
+   Make much more progress in VR implementation and continue improving the visuals of the game.
+
+Product Log: 
+	• VR Camera and visualization
+	• vr controls
+	• visual paths toggleable showing where a unit has moved
+	• fog of war
+	• patrol points for units and allow the placement of patrol points
+	• AI improvements, event system, react to teammate events
+	• VR User Interface Prototype
+	
+
+Member Task :
+   Joshua Shequin:
+	• visual paths toggleable showing where a unit has moved
+	• fog of war
+
+   Johnathan Webb: 
+	• VR Camera and visualization
+	• vr controls
+	• VR User Interface Prototype
+
+   Brenden Smith:
+	• patrol points for units and allow the placement of patrol points
+	• AI improvements, event system, react to teammate events
+
+Scrum Record:
+   Continued issues with the VR integration as our blocker. 
+===========================================================================================================================
+Sprint Eight Goal:
+   Final sprint. Tidying up and bug fixing and finishing VR implementation.
+   
+Product Log: 
+	• Fix FoW cheating
+	• Finish VR Implementation
+	• Navmesh colliders issue
+	
+
+Member Task :
+   Joshua Shequin:
+	• Fix FoW cheating
+
+   Johnathan Webb: 
+	• Finish VR Implementation
+
+   Brenden Smith:
+	• Navmesh colliders issue
+
+Scrum Record:
+   Continued issues with the VR integration as our blocker. We did finally fully implement VR including UIs.
 
