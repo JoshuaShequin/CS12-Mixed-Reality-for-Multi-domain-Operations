@@ -46,9 +46,12 @@ public class AllyBehavior : MonoBehaviour
 
 
     // VR variables
-    public GameObject playerObject;
+    private GameObject playerObject;
     private Transform anchor;
-    private GameObject fogofwar;
+    public LayerMask fogofwar;
+    private bool isSelected = false;
+    public GameObject selectedSprite;
+    
 
     // Behavior States
     public enum STATE
@@ -70,6 +73,10 @@ public class AllyBehavior : MonoBehaviour
 
 
         // Initiating player transform for controls
+
+        selectedSprite.SetActive(false);
+        playerObject = GameObject.FindGameObjectWithTag("Player_Tracking_Space");
+        anchor = playerObject.transform.Find("TrackingSpace").transform.Find("RightHandAnchor");
         
 
 
@@ -81,30 +88,36 @@ public class AllyBehavior : MonoBehaviour
 
     void Update()
     {
-        anchor = playerObject.transform.Find("RightHandAnchor");
+        
         // Will have to get different input key for VR input
-        if (Input.GetMouseButtonDown(1))
-        {
-            MoveToDest();
-        } else if (OVRInput.GetDown(OVRInput.Button.One)) {
-            MoveToDest();
+
+
+        if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger)) {
+            if(isSelected) {
+                MoveToDest();
+            }
         }
+        
+
+
+
 
         // Currently uses shift-Click to set a patrol point
-        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetMouseButtonDown(0))
+        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.GetDown(OVRInput.Button.One))
         {
             // Toss the mouse click position
             RaycastHit hit;
 
             // This cast input key will have to be matched to VR input
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity) && hit.transform != null)
+            if (Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 1000, ~fogofwar) && hit.transform != null)
             {
                 AddPatrolPoint(hit.point);
+                
             }
         }
 
         // Clear all set patrol points on ctrl-lmb
-        if (((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetMouseButtonDown(0)))
+        if (OVRInput.GetDown(OVRInput.Button.One) && OVRInput.GetDown(OVRInput.Button.Two))
         {
             RemovePatrolPoints();
         }
@@ -190,15 +203,13 @@ public class AllyBehavior : MonoBehaviour
     // Can be used to raycast a destination to units
     public void MoveToDest()
     {
+        
         RaycastHit hit;
-
-
-        // This cast input key will have to be matched to VR input
-        if (Physics.Raycast(anchor.transform.position, anchor.transform.forward, out hit, 1000));
-        {
+    
+        if(Physics.Raycast(anchor.position, anchor.TransformDirection(Vector3.forward), out hit, 1000, ~fogofwar)) {
             agent.SetDestination(hit.point);
-            Debug.Log("Unit moved");
-        }
+            Debug.Log("Moving to " + hit.point);
+        }   
     }
 
 
@@ -390,5 +401,15 @@ public class AllyBehavior : MonoBehaviour
     {
         trail_active = !trail_active;
         trail.enabled = trail_active;
+    }
+
+    public void SelectedUnit() {
+        if(isSelected) {
+            selectedSprite.SetActive(false);
+            isSelected = false;
+        } else {
+            selectedSprite.SetActive(true);
+            isSelected = true;
+        }
     }
 }
