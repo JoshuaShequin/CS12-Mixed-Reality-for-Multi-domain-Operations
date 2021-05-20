@@ -73,3 +73,39 @@ Operating System: Windows x86_64
 
 
 ## KNOWN ISSUES AND BUGS
+
+
+Building:
+
+.    Sometimes items in the project will not import correctly upon cloning which will cause all kinds of errors. Remedy by right clicking in the editor and selecting reimport all. This will make sure everything is imported correctly.
+
+
+Main Menu Scene:
+
+·         Button click hits twice, if button is clicked then other point on canvas clicked then the buttons action will be duplicated.
+
+.      Text sizes sometimes change between VR and non-VR views.
+
+·         No other bugs found
+
+ 
+Town Scene:
+
+·         Ally/Enemy units can on occasion become stuck to walls leaving them stuck to the surface.
+
+·         If a unit is caught in a wall or surface, Ally/Enemy units cannot detect them to engage.
+
+·         On occasion, clicking units multiple times can cause them to be no longer selectable
+
+·         Raycast from controller can fail to collide allowing select of units
+
+·         If fog of war is deactivated, it will not record unit movements until reactivated leaving blind spots that would have been revealed if active.
+
+·         IF game restarted with dead ally units, ally status log will still indicated allies are dead and have no health.
+
+·         If unit is deselected, they cannot be reselected sometimes
+
+·         Unit trail when activated at times will be a straight line from spawn to current point
+
+·         While patrolling they will not attack
+
